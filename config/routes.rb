@@ -29,6 +29,13 @@ Rails.application.routes.draw do
         get :edit_detail
       end
     end
+    resources :products do
+      collection do
+        get :file_delete
+        get :file_download
+      end
+    end
+    resources :product_manages
   end
 
   # Example of regular route:

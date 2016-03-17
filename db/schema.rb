@@ -11,8 +11,8 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160316055330) do
 
+ActiveRecord::Schema.define(version: 20160316055330) do
   create_table "articles", force: true do |t|
     t.string   "title"
     t.integer  "catalog_id"
@@ -21,6 +21,7 @@ ActiveRecord::Schema.define(version: 20160316055330) do
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+ActiveRecord::Schema.define(version: 20160317034007) do
 
   create_table "avatars", force: true do |t|
     t.string   "photo"
@@ -37,8 +38,25 @@ ActiveRecord::Schema.define(version: 20160316055330) do
     t.datetime "updated_at"
   end
 
+  create_table "fileuploads", force: true do |t|
+    t.string   "filename"
+    t.integer  "fileuploadable_id"
+    t.string   "fileuploadable_type"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "pictures", force: true do |t|
     t.string   "name"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "products", force: true do |t|
+    t.string   "name",         comment: "产品名称"
+    t.text     "introduction", comment: "产品简介"
+    t.text     "programme",    comment: "产品方案"
+    t.text     "detail",       comment: "产品详情"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

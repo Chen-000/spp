@@ -1,0 +1,33 @@
+<h1>详情</h1>
+<div class="well_head">
+
+  <div class="establish">
+   <div class="public_form">
+      <label class="label">产品名称:</label>
+      <span class="validate-name"><%= @product.name %></span>
+    </div>
+
+    <div class="public_form">
+      <label class="label">产品简介:</label>
+      <span class="validate-name"><%= @product.introduction %></span>
+    </div>
+
+    <div class="public_form">
+      <label class="label">产品详情:</label>
+      <span class="validate-name"><%= @product.detail.html_safe %></span>
+    </div>
+
+    <h3 class='mt20'>附件下载</h3>
+    <div class="textc operation mt20">
+      <% @product.fileuploads.each do |file|%>
+        <% if not file.filename.blank? %>
+          <%= file.filename.path.split("/").last %><%= link_to '下载', file_download_backend_products_path(file_id: file.id) %><br/>
+        <% end %>
+      <% end %>
+    </div>
+  
+
+  <%= link_to '修改', edit_backend_product_path(@product, :back => request.fullpath)%>
+  <%= link_to '返回', params[:back]  %>
+  </div>
+</div>
