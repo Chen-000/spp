@@ -11,6 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
+
 ActiveRecord::Schema.define(version: 20160316055330) do
 
   create_table "articles", force: true do |t|
@@ -18,6 +19,12 @@ ActiveRecord::Schema.define(version: 20160316055330) do
     t.integer  "catalog_id"
     t.text     "desc"
     t.string   "uploadfiles"
+
+ActiveRecord::Schema.define(version: 20160316033949) do
+
+  create_table "abouts", force: true do |t|
+    t.text     "item",       comment: "项目"
+    t.text     "content",    comment: "内容"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
