@@ -1,0 +1,17 @@
+<%= simple_form_for [:backend,@article], html:{class: 'valid_engine establish', :wrapper => false} do |f| %>
+  
+  <div class="public_form">
+    <label class="label"><span>*</span>标题：</label>
+    <%= f.text_field :title, class: 'validate[required]' %>
+  </div>
+
+  <div class="public_form">
+    <label class="label"><span></span>栏目类别：</label>
+    <%= f.select :catalog_id, Catalog.all.collect{|c| [c.name,c.id]}, include_blank: '请选择', class: 'public_input_s' %>
+  </div>
+
+  <div class="public_form">
+    <label class="label"><span></span>文章内容：</label>
+  </div>
+
+<% end -%>

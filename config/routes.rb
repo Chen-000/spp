@@ -21,6 +21,7 @@ Rails.application.routes.draw do
   mount UeditorRails::Engine => '/ueditor'
 
     resources :catalogs
+    resources :articles
     resources :home_page
     resources :pictures
     resources :abouts do
