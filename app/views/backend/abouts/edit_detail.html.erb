@@ -1,0 +1,16 @@
+<%= form_for [:backend,@about], :url => backend_about_path(@about), method: :patch, html: {:class => "valid_engine establish"} do |f| %>
+  <div class="public_form">
+    <label class="label"><span></span>内容</label>
+    <% if @item == 1 %>
+      <%= f.ueditor_text :synopsis, :width => "70%", :class => "ml100" %>
+    <% elsif @item == 2 %>
+      <%= f.ueditor_text :recruit, :width => "70%", :class => "ml100" %>
+    <% else @item ==3 %>
+      <%= f.ueditor_text :contact, :width => "70%", :class => "ml100" %>
+    <% end -%>
+  </div>
+
+  <div>
+    <%= render '/backend/shared/form_buttons', :f => f  %>
+  </div>
+  <% end -%>

@@ -1,39 +1,32 @@
-class Backend::AboutsController < ApplicationController
-	layout 'spp'
+class Backend::AboutsController < Backend::BaseController
+	
+  #before_filter :create
         
-  def index
-    if 
-    @about = About.first
-    if params[:item] == 3
-     @cotent = About.first.contact
-   elsif params[:item] == 2
-    @cotent = About.first.recruit
-   else 
-    @cotent = About.first.synopsis
-   end
-   @item = params[:item]
- else
-    @about ||= About.new
-  end
-end
-
-  def edit_detail
-    @about = About.first
-    @item = params[:item]
+  def index 
+    @about = About.find(params[:id]) if About.pluck(:id).include?(params[:id].to_i)
+    @about = About.first if !About.all.blank? && params[:id].blank?
+   
   end
 
-    def create
-     
-    end
+  def create
+    @about= About.new(about_params)
+      if @about.save
+    redirect_to backend_abouts_path
+      end
+  end
 
   def update
-    @about = About.first
-    @about.update_attributes(about_params)
-    redirect_to :action => :index
+    @about = About.find(params[:id]) if params[:id]
+    @about.update_attributes(about_params) 
+            flash[:success] = '操作成功.'
+    redirect_to  backend_abouts_path(id: params[:id])
   end
 
-   private			
-  def about_params
-     params.require(:about).permit(:synopsis, :recruit, :contact, :id)
+  private			
+    def about_params
+      params.require(:about).permit(:item, :content, :id)
   end
+
+
+
 end
