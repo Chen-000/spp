@@ -1,9 +1,8 @@
-class Backend::PicturesController < ActionController::Base
-layout 'spp'
-before_filter :authenticate_user!
-before_filter :find_picture
+class Backend::PicturesController < Backend::BaseController
+  before_filter :authenticate_user!
+  before_filter :find_picture
   def index
-    @pictures = Picture.all	
+    @pictures = Picture.all.page(params[:page]).per(20)	
   end
 
   def new
@@ -39,12 +38,13 @@ before_filter :find_picture
     @picture.destroy
     redirect_to backend_pictures_path
   end
-  private
-  def find_picture
-     @picture = Picture.find(params[:id]) if params[:id]
-  end
 
-  def picture_params
-     params.require(:picture).permit(:name)
-   end	
+  private
+    def find_picture
+      @picture = Picture.find(params[:id]) if params[:id]
+    end
+  
+    def picture_params
+      params.require(:picture).permit(:name)
+    end	
 end

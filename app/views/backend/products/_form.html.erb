@@ -1,0 +1,32 @@
+<%= form_for [:backend,@product], html: {:class => "valid_engine establish", multipart: true} do |f| %>
+  <div class="public_form">
+    <label class="label"><span>*</span>产品名称:</label>
+    <%= f.text_field :name, class: 'validate[required] public_input' %>
+  </div>
+
+  <div class="public_form">
+    <label class="label"><span></span>产品简介</label>
+    <%= f.text_area :introduction, size: '80x5' %>
+  </div>
+
+  <div class="public_form">
+    <label class="label"><span></span>产品详情</label>
+    <%= f.ueditor_text :detail, :width => "70%", :class => "ml100" %>
+  </div>
+
+  <div class="public_form">
+    <label class="label">附件上传</label>
+    <% if not @product.fileuploads.nil? %>
+      <% @product.fileuploads.each do |file|%>
+      <span><%= file.filename.path.split("/").last %></span>
+      <%= link_to 'x', file_delete_backend_products_path(file_id: file.id), class: "file" %>
+      <% end %>
+    <% end %>
+    <br/>  
+    <%= render '/backend/shared/upload_file', :f => f %>
+  </div>
+  <div class='clear'></div> 
+  <div>
+    <%= render '/backend/shared/form_buttons', :f => f  %>
+  </div>
+<% end %>

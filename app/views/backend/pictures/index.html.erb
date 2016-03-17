@@ -8,13 +8,15 @@
   <table class="common">
     <tbody>
       <tr>
+        <td>序号</td>
         <td>图片名称</td>
         <td>图片内容</td>
         <td>操作</td>
       </tr>
 
-      <% @pictures.each do |picture| %>
+      <% @pictures.each_with_index  do |picture, index| %>
         <tr>
+         <td><%= index_no(index, 20)%></td>
          <td><%=picture.name%></td>
          <td>
            <% picture.avatars.each do |ta|%>
@@ -33,4 +35,5 @@
       </td>
     </tbody>
   </table>
+  <%= paginate @pictures %>
 </div>

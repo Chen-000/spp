@@ -1,0 +1,34 @@
+<div class="form_form"  style="margin-left:160px;">
+  <div style="float: left;">
+    <input type="button" class="addpic" value="添加附件" onclick="addfile()"/>
+  </div>
+  <div class="form_f" style="float: left; margin-left: 30px;">
+    <%= file_field_tag "pics[picture1]" %>
+    <a href="#" onclick="delfile(this)">x</a>
+    <br/>
+  </div>
+</div>
+
+
+<script language="javascript">
+
+function addfile(){
+  var size = $('.form_f input[type="file"]').length
+  var file = $('.form_f input[name="pics[picture1]"]')
+  var del = file.next()
+  var newfile = file.clone(true).val('')
+  newfile.attr('name','pics[picture'+(size+1)+']')
+  $('.form_f').append(newfile)
+  $('.form_f').append(del.clone(true))
+  $('.form_f').append('<br/>')
+}
+
+function delfile(a){
+  var size = $('.form_form input[type="file"]').length
+  if(size>1){
+    $(a).prev().remove()
+    $(a).next().remove()
+    $(a).remove()
+  }
+}
+</script>
