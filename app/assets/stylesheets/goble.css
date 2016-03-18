@@ -21,6 +21,7 @@ sub{ vertical-align: text-bottom; }
 .mb8{margin-bottom:8px;}
 .mb10{margin-bottom:10px;}
 .ml8{margin-left:8px; display:inline;}
+.ml150{margin-left: 150px;}
 .mr8{margin-left:8px; display:inline;}
 .pt10{padding-top:10px;}
 .pt15{padding-top:15px;}
@@ -53,3 +54,4 @@ sub{ vertical-align: text-bottom; }
 .goodsordermain .blueness {color:#005EA7;}
 .w80{width:80px;}
 .w86{width:86px;}
+.tc{text-align: center;}

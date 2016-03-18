@@ -22,6 +22,7 @@ Rails.application.routes.draw do
 
     resources :catalogs
     resources :articles
+    resources :infos
     resources :home_page
     resources :pictures
     resources :abouts do
