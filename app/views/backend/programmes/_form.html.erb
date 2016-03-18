@@ -1,0 +1,26 @@
+<%= form_for [:backend,@programme], html: {:class => "valid_engine establish",  multipart: true} do |f| %>
+  <div class="public_form">
+    <label class="label"><span></span>方案名称:</label>
+    <%= f.text_field :name %>
+  </div>
+
+  <div class="public_form">
+    <label class="label"><span></span>内容:</label>
+    <%= f.ueditor_text :content, :width => "80%", :class => "ml150" %>
+  </div>
+
+  <div>
+    <label class="label">图片上传</label>
+    <%= file_field_tag :photo, class: "face" %>
+    <% if not @programme.avatars.nil? %>
+      <% @programme.avatars.each do |ta|%>   
+      <a class="pic" href="<%= ta.photo.url %>" ><%= image_tag(ta.photo.url, size: "50x40", title: '点击放大') %></a>
+      <% end %>  
+    <% end -%>
+  </div>
+
+    <div class='clear'></div> 
+  <div>
+    <%= render '/backend/shared/form_buttons', :f => f  %>
+  </div>
+ <% end %>
