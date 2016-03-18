@@ -1,0 +1,20 @@
+<% list_link = backend_articles_path(:back => request.fullpath) %>
+
+<h1>
+  <%= "#{@article.try(:title)}"%>文章详情：
+
+  <%= link_to '返回', params[:back] || list_link %>
+</h1>
+
+  <%= link_to '修改', edit_backend_article_path(@article, :back => request.fullpath)%>
+
+
+<div class="well_head">
+  <div class="jianju_x"></div>
+
+  <div class='mb20 document_content'>
+    <%= @article.desc.html_safe rescue nil%>
+  </div>
+
+  <div>
+</div>

@@ -1,4 +1,4 @@
-<%= simple_form_for [:backend,@article], html:{class: 'valid_engine establish', :wrapper => false} do |f| %>
+<%= form_for [:backend,@article], html:{class: 'valid_engine establish', :wrapper => false} do |f| %>
   
   <div class="public_form">
     <label class="label"><span>*</span>标题：</label>
@@ -12,6 +12,11 @@
 
   <div class="public_form">
     <label class="label"><span></span>文章内容：</label>
+    <%= f.ueditor_text :desc, :width => "70%", :class => "ml100" %>
+  </div>
+
+  <div>
+   <%= render '/backend/shared/form_buttons',:f => f %>
   </div>
 
 <% end -%>
