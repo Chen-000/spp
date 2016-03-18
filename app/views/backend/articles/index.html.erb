@@ -1,6 +1,7 @@
 <div class="plate">
   <ul>
-    <%= plate_link backend_articles_path(:back => request.fullpath), is_first:'true', color:'red' , title:  '文章管理', desc: '文章管理' %>
+    <%= plate_link new_backend_article_path(:back => request.fullpath), is_first:'true', color:'green' , title:  '新建文章', desc: '添加文章' %>
+    <%= plate_link backend_articles_path(:back => request.fullpath), color:'red' , title:  '文章管理', desc: '文章管理' %>
     <%= plate_link backend_catalogs_path(:back => request.fullpath), color:'orange', title: '栏目管理', desc:'' %>
   </ul>
 </div>
@@ -17,11 +18,20 @@
           <td>栏目</td>
           <td>操作</td>
         </tr>
-        <% @articles.each_with_index do |articles,index| %>
-        
-     
+        <% @articles.each_with_index do |article,index| %>
+          <tr>
+            <td><%= index_no(index, 20)%></td>
+            <td><%= article.title%></td>
+            <td><%= article.catalog.name%></td>
+            <td class="textc operation">
+              <%=link_to "查看" , backend_article_path(article, :back => request.fullpath) %>
+              <%= link_to"修改", edit_backend_article_path(article, :back => request.fullpath) %>
+              <%= link_to"删除", backend_article_path(article,  :back => request.fullpath), :method => :delete, data:{confirm: "确定要删除吗？"}%>
+            </td>
+          </tr>    
         <% end %>
       </tbody>
     </table>
   </div>
+   <%= paginate @articles %>
 </div>

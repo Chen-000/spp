@@ -3,7 +3,7 @@
     <%= plate_link new_backend_catalog_path(:back => request.fullpath), is_first:true, color:'red', title:'添加栏目', desc:'添加栏目'%>
   </ul>
 </div>
-<h1>栏目分类列表<%= link_to '返回', params[:back], class: "ml8" unless params[:back].blank? %></h1>
+<h1>栏目分类列表<%= link_to '返回',backend_articles_path, class: "ml8" %></h1>
 
 <div class="well_head">
   <div class="jianju_x"></div>
@@ -19,6 +19,7 @@
           <td><%= index_no(index,20)%></td>
           <td><%= catalog.name%></td>
           <td class="textc operation">
+            <%= link_to  '查看', backend_catalog_path(catalog) %>
             <%= link_to "修改", edit_backend_catalog_path(catalog, :back => request.fullpath) %>
             <%= link_to '删除', backend_catalog_path(catalog, :back => request.fullpath), :method => :delete, data:{confirm: "确定要删除吗？"}%>
           </td>
