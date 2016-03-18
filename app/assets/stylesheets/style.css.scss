@@ -69,7 +69,6 @@ body{ font-size:12px; font-family: "Microsoft YaHei"; color:#333333; background:
 }
 
 .project-right {
-  height:100%;
   margin-left:212px;
 }
 
@@ -102,6 +101,7 @@ body{ font-size:12px; font-family: "Microsoft YaHei"; color:#333333; background:
 
 .container {
   padding-left: 20px;
+  heigth:100%;
 }
 
 .plate {
@@ -897,6 +897,14 @@ input[type='text'].common.w185 {
 }
 .page-header{
   margin-bottom:15px;
+}
+
+.form-actions{
+  width:300px;
+  margin:0 auto;
+  padding-bottom:20px;
+  overflow:hidden;
+  height:auto;
 }
 
 
