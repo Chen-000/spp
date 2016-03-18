@@ -37,6 +37,7 @@ Rails.application.routes.draw do
       end
     end
     resources :product_manages
+    resources :programmes
   end
 
   # Example of regular route:

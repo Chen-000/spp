@@ -1,0 +1,35 @@
+  <div class="plate">
+    <ul>
+      <%= plate_link new_backend_programme_path(:back => request.fullpath) , color: 'red', title: '新增方案' %>
+    </ul>
+  </div>
+
+  <div class="well_head">
+  <div class="jianju_x"></div>
+  <table class="common">
+     <tbody>
+      <tr>
+        <td>序号</td>
+        <td>方案名称</td>       
+        <td>创建时间</td>
+        <td>操作</td>
+      </tr>
+
+      <% @programmes.each_with_index  do |programme, index| %>
+        <tr>
+         <td><%= index_no(index, 20)%></td>
+         <td><%=programme.name%></td>
+         <td><%=programme.created_at.strftime("%Y-%m-%d %H:%M:%S")%></td>
+         <td>
+           <%= link_to '查看', backend_programme_path(programme, :back => request.fullpath)%>
+           <%= link_to '修改', edit_backend_programme_path(programme, :back => request.fullpath)%>
+           <%= link_to '删除', backend_programme_path(programme, :back => request.fullpath), data: {method: :delete,confirm: "你确定删除?"} %>
+         </td>
+       </tr>
+
+      <% end %>
+      <td class="textc operation"></td>
+    </tbody>
+  </table>
+  <%= paginate @programmes %>
+</div>
