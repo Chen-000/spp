@@ -1,0 +1,38 @@
+<div class="banner">
+  <ul class="list">
+    <% @pictures.each do|p|%>
+     <% p.avatars.each do |ta|%>
+       <li style="display: list-item;background:url(<%= ta.photo.url %>) no-repeat 50% 0;" class="bg1" >
+       </li>
+     <% end %>
+   <% end %>
+  </ul>
+</div>
+<div class="gy">
+  <div class="gywm">
+    <h1>关于我们<span class="eng"> ABOUT US</span></h1>
+    <ul id="tags">
+      <li class="selectTag">
+        <a onClick="selectTag('tagContent0',this)" href="javascript:void(0)">公司简介</a>
+      </li>
+      <li>
+        <a onClick="selectTag('tagContent1',this)" href="javascript:void(0)">人才招聘</a>
+      </li>
+    </ul>
+
+    <div id="tagContent" class="cl">
+      <div class="tagContent selectTag dn" id="tagContent0">
+    	 <div class="sublist">
+          <p class="tein"><%=@gsjj.content.html_safe %></p>
+	 </div>
+     </div>
+
+      <div class="tagContent dn" id="tagContent1">
+        <div class="sublist">
+          <p class="tein"><%= @rczp.content.html_safe%></p>
+        </div>
+      </div>
+</div>
+</div>
+</div>
+

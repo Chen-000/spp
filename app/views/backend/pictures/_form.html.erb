@@ -1,7 +1,18 @@
 <%= form_for [:backend,@picture], html: {:class => "valid_engine establish", multipart: true} do |f| %>
   <div class="public_form">
+    <p>
     <label class="label"><span>*</span>图片名称:</label>
     <%= f.text_field :name, class: 'validate[required] public_input' %>
+    </p><br>
+    <p>
+    <label class="label"><span>*</span>图片链接:</label>
+    <%= f.text_field :link, class: 'validate[required] public_input' %>
+    </p>
+    <br>
+    <p>
+    <label class="label"><span>*</span>图片类别:</label>
+    <%=f.select :kind ,[['请选择....','2'],['普通图片','0'], ['轮播图','1'],['方案产品banner','3'],['资讯动态banner','4'],['关于我们banner','5'],['联系我们banner','6']] , class: 'validate[required] public_input'%> 
+    </p>
   </div>
 
   <div class="public_form">

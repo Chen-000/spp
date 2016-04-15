@@ -1,5 +1,5 @@
 class Backend::InfosController <Backend::BaseController
-  before_action :find_info, only: [:show, :edit, :update, :destroy]
+  before_action :find_info
 
   def index
     @infos = Info.all.order('id desc').page(params[:page]).per(20)    
@@ -26,7 +26,7 @@ class Backend::InfosController <Backend::BaseController
   def update
     @info.update_attributes(info_params)
      if params[:photo]
-         @picture.avatars.each do |ta|
+         @info.avatars.each do |ta|
           ta.update(:photo => params[:photo])
          end
      end  
@@ -40,7 +40,7 @@ class Backend::InfosController <Backend::BaseController
 
   private
     def info_params
-      params.require(:info).permit(:title, :desc)  
+      params.require(:info).permit(:title, :desc )  
     end
 
     def find_info

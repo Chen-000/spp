@@ -1,6 +1,7 @@
 <div class="plate">
     <ul>
-      <%= plate_link new_backend_picture_path(:back => request.fullpath), is_first: true, color: 'green', title: '新增图片', desc: '添加图片' %>
+     <%= plate_link new_backend_picture_path(:back => request.fullpath), is_first:'true',color: 'red', title: '新增图片', desc: '添加图片' %>
+     <%= plate_link backend_pictures_path, color: 'green', title: '图片管理', desc: '管理图片' %>
     </ul>
   </div>
   <div class="line"></div> 
@@ -9,7 +10,9 @@
     <tbody>
       <tr>
         <td>序号</td>
-        <td>图片名称</td>
+        <td>图片标题</td>
+        <td>图片链接</td>
+        <td>图片类别</td>
         <td>图片内容</td>
         <td>操作</td>
       </tr>
@@ -18,6 +21,8 @@
         <tr>
          <td><%= index_no(index, 20)%></td>
          <td><%=picture.name%></td>
+         <td><%=picture.link%></td>
+         <td><%=Picture::KIND[picture.kind]%></td>
          <td>
            <% picture.avatars.each do |ta|%>
              <a class="pic" href="<%= ta.photo.url %>" ><%= image_tag(ta.photo.url, size: "100x80", title: '点击放大') %></a>

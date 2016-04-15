@@ -1,7 +1,7 @@
 class Backend::ProductsController < Backend::BaseController
    before_filter :find_product
   def index
-    @products = Product.all.order('id desc').page(params[:page]).per(20)		
+    @products = Product.all.order('kind desc').page(params[:page]).per(20)		
   end
 
   def new
@@ -54,7 +54,7 @@ class Backend::ProductsController < Backend::BaseController
 
   private
     def product_params
-      params.require(:product).permit(:name, :introduction, :programme, :detail)	
+      params.require(:product).permit(:name, :kind, :introduction, :programme, :detail)	
     end
 
     def find_product

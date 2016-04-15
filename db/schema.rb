@@ -11,15 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-
-ActiveRecord::Schema.define(version: 20160316055330) do
-  create_table "articles", force: true do |t|
-    t.string   "title"
-    t.integer  "catalog_id"
-    t.text     "desc"
-    t.string   "uploadfiles"
-
-ActiveRecord::Schema.define(version: 20160316033949) do
+ActiveRecord::Schema.define(version: 20160318024206) do
 
   create_table "abouts", force: true do |t|
     t.text     "item",       comment: "项目"
@@ -27,7 +19,15 @@ ActiveRecord::Schema.define(version: 20160316033949) do
     t.datetime "created_at"
     t.datetime "updated_at"
   end
-ActiveRecord::Schema.define(version: 20160317034007) do
+
+  create_table "articles", force: true do |t|
+    t.string   "title"
+    t.integer  "catalog_id"
+    t.text     "desc"
+    t.string   "uploadfiles"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "avatars", force: true do |t|
     t.string   "photo"
@@ -52,14 +52,24 @@ ActiveRecord::Schema.define(version: 20160317034007) do
     t.datetime "updated_at"
   end
 
+  create_table "infos", force: true do |t|
+    t.string   "title"
+    t.text     "desc"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "pictures", force: true do |t|
     t.string   "name"
+    t.string   "link"
+    t.integer  "kind"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
   create_table "products", force: true do |t|
     t.string   "name",         comment: "产品名称"
+    t.integer  "kind"
     t.text     "introduction", comment: "产品简介"
     t.text     "programme",    comment: "产品方案"
     t.text     "detail",       comment: "产品详情"

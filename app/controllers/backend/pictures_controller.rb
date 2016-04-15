@@ -2,7 +2,7 @@ class Backend::PicturesController < Backend::BaseController
   before_filter :authenticate_user!
   before_filter :find_picture
   def index
-    @pictures = Picture.all.page(params[:page]).per(20)	
+    @pictures = Picture.all.order('kind').page(params[:page]).per(20)	
   end
 
   def new
@@ -45,6 +45,6 @@ class Backend::PicturesController < Backend::BaseController
     end
   
     def picture_params
-      params.require(:picture).permit(:name)
+      params.require(:picture).permit(:name, :link, :kind)
     end	
 end

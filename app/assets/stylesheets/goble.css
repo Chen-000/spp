@@ -44,6 +44,54 @@ sub{ vertical-align: text-bottom; }
 .clearfix {+display: inline-block;}
 * html .clearfix {height: 1%;}
 
+
+/*pagination*/
+.pagination {
+  float: left;
+  margin: 10px 0;
+}
+
+.pagination span a,
+.pagination span.gap,
+.pagination span.current {
+  float: left;
+  padding: 4px 12px;
+  line-height: 16px;
+  text-decoration: none;
+  border: 1px solid #dddddd;
+  border-left-width: 0;
+}
+
+.pagination span.current {
+  color: red;
+}
+
+nav.pagination>span:first-child,
+.pagination>span.first a{
+  border-left-width: 1px !important;
+}
+
+.pagination span > a:hover,
+.pagination span a:focus{
+  background-color: #f5f5f5;
+  color: #FF6633;
+}
+
+.pagination span > a:link,
+.pagination span a:focus{
+  background-color: #f5f5f5;
+  color: #000;
+}
+.pagination span > a:visited,
+.pagination span a:focus{
+  background-color: #f5f5f5;
+  color: #000;
+}
+
+
+
+
+
 .h20{height:20px;}
 .h60 {height:60px;}
 .lh60 {line-height:60px;}
