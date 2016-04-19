@@ -130,7 +130,7 @@ Devise.setup do |config|
 
   # Invalidates all the remember me tokens when the user signs out.
   config.expire_all_remember_me_on_sign_out = true
-
+  
   # If true, extends the user's remember period when remembered via cookie.
   # config.extend_remember_period = false
 
@@ -141,7 +141,7 @@ Devise.setup do |config|
   # ==> Configuration for :validatable
   # Range for password length.
   config.password_length = 6..128
-
+  config.secret_key = 'e7eec0db7c3e042f7bd2dec8666a8b7d59d88c0aa92afd79326b970f3bf89671fb096e84498ea5747cf6e5e3e46a09206007c0441ab091eec4cf2c26470c72a8'
   # Email regex used to validate email formats. It simply asserts that
   # one (and only one) @ exists in the given string. This is mainly
   # to give user feedback and not to assert the e-mail validity.

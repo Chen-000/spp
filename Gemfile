@@ -75,7 +75,7 @@ gem 'ueditor_rails', :git => "git://github.com/chinacheng/ueditor_rails.git"
 
 gem 'ztree', '0.0.7'
 # 加速静态文件编译
-gem 'turbo-sprockets-rails3'
+# gem 'turbo-sprockets-rails3'
 # IP
 gem 'ipparse'
 # 点击编辑
