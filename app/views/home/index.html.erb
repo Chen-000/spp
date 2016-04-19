@@ -1,0 +1,54 @@
+<div class="banner">
+  <ul class="list">
+  <% @pictures.each do|p|%>
+     <% p.avatars.each do |ta|%>
+       <li style="display: list-item; background:url(<%= ta.photo.url %>) no-repeat 50% 0 ; " class="bg1" >
+        <a href="<%= p.link%>">
+         <div class="link"></div>
+        </a>
+       </li>
+      <% end %>
+  <% end %>
+  </ul>
+  <ul class="btn"></ul>
+</div>
+
+<div class="product">
+  <div class="product-main">
+    <ul>
+      <a href="/home/products">
+      <li>
+        <div class="icon">
+          <img src="/assets/man.gif"/>
+          <div class="contact">
+            <div class="shape"><strong>方案与产品</strong></div>
+         </div>
+        </div>       
+  
+      </li>
+      </a>
+      <a href="/home/informations">
+      <li>
+        <div class="icon">
+          <img src="/assets/computer.gif"/>
+          <div class="contact">
+            <div class="shape"><strong>资讯与动态</strong></div>
+          </div>
+        </div>       
+
+      </li>
+      </a>
+      <a href="/home/abouts">
+      <li>
+        <div class="icon">
+          <img src="/assets/hand.gif"/>
+          <div class="contact">
+            <div class="shape"><strong>招聘</strong></div>
+          </div>
+        </div>       
+
+      </li>
+      </a>
+    </ul>
+  </div>
+</div>

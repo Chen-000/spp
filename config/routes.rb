@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   #1，我们指定自己的 Controller 来处理；
   #2，继承 devise；
   #3  , 只重写我们想定制的部分action
+
   devise_for :users, controllers: {
     sessions: "user/sessions",
     registrations: "user/registrations",
@@ -12,14 +13,24 @@ Rails.application.routes.draw do
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
-  root :to => "backend/home#index"
+  root :to => "home#index"
+  resources :home do
+    collection do
+      get :products
+      get :informations
+      get :abouts
+      get :contacts
+      get :ajax_query
+      get :infos_extras
+      get :prod_extras
+    end
+  end
+  
 
   namespace :backend do
-    get '/' => 'home#index'
-
          #ueditor编辑器
   mount UeditorRails::Engine => '/ueditor'
-
+    get '/' => 'home#index'
     resources :catalogs
     resources :articles
     resources :infos
@@ -39,6 +50,9 @@ Rails.application.routes.draw do
     resources :product_manages
     resources :programmes
   end
+
+
+
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'

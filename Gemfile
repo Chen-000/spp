@@ -53,6 +53,8 @@ gem 'sunspot_solr', '2.1.1'
 # biding.pry
 gem 'pry-rails', '0.3.2'
 
+gem "select2-rails"
+
 # 分页
 gem 'kaminari', '0.16.1'
 # 全文索引相关的分页

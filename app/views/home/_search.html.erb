@@ -1,0 +1,4 @@
+<%= search_form_for @search, url: informations_home_index_path, :html => {class: 'establish'} do |f| %>
+  <%= f.text_field :title_cont , class: "tex"%>
+  <%= f.submit '搜索' , class: "sousuo" %>
+<% end %>

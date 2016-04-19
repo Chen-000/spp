@@ -1,0 +1,45 @@
+<div class="banner">
+  <ul class="list">
+    <% @picture.each do|p|%>
+     <% p.avatars.each do |ta|%>
+       <li style="display: list-item;background:url(<%= ta.photo.url %>) no-repeat 50% 0;" class="bg1" >
+       </li>
+     <% end %>
+   <% end %>
+  </ul>
+</div>
+
+<div class="ex">
+<div class="desc">
+     <div class="hyzx">行业资讯</div>
+    <ul class="gsdt">
+      <li>
+        <span>公司动态</span>
+      </li>
+    </ul>
+  <div class="search">
+      <%= render "search" %>
+  </div>
+  <div class="extra">
+    <h1>
+      <div class="title">
+      <%=@contents.title%>
+    </div>
+    </h1>
+  </div>  
+<div class="cont">
+  <div class="detail">
+   <span><%= @contents.desc.html_safe%></span>
+  </div>
+  <div class="action">
+    <% if @prev_page %>
+    <span class="spanl">上一篇：<%= link_to @prev.title, infos_extras_home_index_path(id: @prev.id)%></span>
+    <% end -%>
+    <% if @next_page %>
+    <span class="spanr">下一篇：<%= link_to @next.title, infos_extras_home_index_path(id: @next.id)%></span>
+    <% end -%>
+  </div>
+ </div>
+ </div>
+</div>
+
