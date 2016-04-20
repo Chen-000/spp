@@ -1,29 +1,34 @@
-<div class="banner">
-  <ul class="list">
-    <% @pictures.each do|p|%>
-     <% p.avatars.each do |ta|%>
-       <li style="display: list-item;background:url(<%= ta.photo.url %>) no-repeat 50% 0;" class="bg1" >
-       </li>
-     <% end %>
-   <% end %>
-  </ul>
-</div>
+<% @pictures.each do|p|%>
+<% p.avatars.each do |ta|%>
+  <div class="contacts" style="display: list-item;background:url(<%= ta.photo.url %>) no-repeat 50% 0;" class="bg1">
+    <span>CONTACT US</span><br>
+    <span>联系我们</span>
+    <div class="contact_cont">
+      <div class="view">
+        <div class="cont">
+          <p class="title"></p><br>
+          <p class="content"></p>
+        </div>
+        <div class="cont">
+          <p class="title"></p><br>
+          <p class="content"></p>
+        </div>
+      </div>
 
-<div class="gy">
-<div class="gywm">
-  <h1>联系我们<span class="eng"> CONTACT US</span></h1>
-  <div class="tagContent dn" id="tagContent0">
-    <div class="sublist">
-      <div id="container"></div> 
-      <script type="text/javascript"> 
-        var map = new BMap.Map("container");          // 创建地图实例  
-        var point = new BMap.Point(116.404, 39.915);  // 创建点坐标  
-        map.centerAndZoom(point, 15);                 // 初始化地图，设置中心点坐标和地图级别  
-      </script> 
-      <p class="tein"><%= @lxwm.content.html_safe%></p>
+      <div class="view_add">
+        <div class="cont">
+          <p class="title"></p><br>
+          <p class="content"></p>
+        </div>
+        <div class="cont">
+          <p class="title"></p><br>
+          <p class="content"></p>
+        </div>
+      </div>
+
     </div>
   </div>
-</div>
-  </div>
+<% end %>
+<% end %>
 
 

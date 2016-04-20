@@ -25,9 +25,11 @@ layout "home"
   # end    
 
   def abouts
-    @gsjj = About.find(1)
-    @rczp = About.find(2)
+    @countrys = Picture.where(kind: 8)
+    @zmd = Picture.where(kind: 7)
     @pictures = Picture.where(kind: 5)
+    @content = About.find(1)
+    @distribut = About.find(3)
   end
 
   def contacts
@@ -48,4 +50,5 @@ layout "home"
      @prev_page = true  if @prev 
      @next_page = true   if  @next
   end
+
 end

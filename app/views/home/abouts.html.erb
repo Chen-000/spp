@@ -1,4 +1,4 @@
-<div class="banner">
+<div class="abouts">
   <ul class="list">
     <% @pictures.each do|p|%>
      <% p.avatars.each do |ta|%>
@@ -8,31 +8,62 @@
    <% end %>
   </ul>
 </div>
-<div class="gy">
-  <div class="gywm">
-    <h1>关于我们<span class="eng"> ABOUT US</span></h1>
-    <ul id="tags">
-      <li class="selectTag">
-        <a onClick="selectTag('tagContent0',this)" href="javascript:void(0)">公司简介</a>
-      </li>
-      <li>
-        <a onClick="selectTag('tagContent1',this)" href="javascript:void(0)">人才招聘</a>
-      </li>
-    </ul>
+<div class="introduct">
+  <span><strong>公司简介 </strong></span>
+  <div class="introduct_cont">
+    <%= @content.content.html_safe%>
+  </div>
+</div>
+<div class="culture">
+  <span><strong>公司文化 </strong></span>
+</div>
+<div class="culture_cont">
+   <div class="zmd">
+     <marquee behavior= slide direction=left scrollamount=30 onmouseover="this.stop()" onmouseout="this.start()" >
+      <ul>
+       <% @zmd.each do |p|%>
+         <% p.avatars.each do |ta|%>
+           <li>
+           <% if ta.photo.blank? %>
+             <%= image_tag "spp.png" %>
+             <%= image_tag "job.png" %>
+             <%= image_tag "people.png" %>
+             <%= image_tag "environment.png" %>
+           <% else %>
+             <%= image_tag "#{ta.photo}" %>
+           <% end %>
+          </li>
+        <% end -%>
+      <% end -%>
+     </ul>
+    </marquee>
+  </div>
+</div>
+<div class="visition">
+  <span><strong>公司愿景 </strong></span>
+</div>
+<div class="visition_cont">
+</div>
+<div class="distribut">
+  <span><strong>公司分布</strong></span>
+   <div class="distribut_decs">
+    <%= @distribut.content.html_safe%>
+  </div>
+</div>
+<div class="distribut_cont">
+  <div class="countrys">
+      <ul>
+       <% @countrys.each do |p|%>
+         <% p.avatars.each do |ta|%>
+           <li>
+             <%= image_tag "#{ta.photo}" %><br>
+             <p><strong><%= p.name%></strong></p>
+          </li>
+        <% end -%>
+      <% end -%>
+     </ul>
+  </div>
 
-    <div id="tagContent" class="cl">
-      <div class="tagContent selectTag dn" id="tagContent0">
-    	 <div class="sublist">
-          <p class="tein"><%=@gsjj.content.html_safe %></p>
-	 </div>
-     </div>
+</div>
 
-      <div class="tagContent dn" id="tagContent1">
-        <div class="sublist">
-          <p class="tein"><%= @rczp.content.html_safe%></p>
-        </div>
-      </div>
-</div>
-</div>
-</div>
 

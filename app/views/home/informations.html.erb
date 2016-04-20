@@ -27,9 +27,9 @@
          <% p.avatars.each do |ta|%>
            <li>
            <% if ta.photo.blank? %>
-             <img src="/assets/man.gif">
+              <%= image_tag "man.gif" %>
            <% else %>
-             <img src="<%= ta.photo.url %>">
+              <%= image_tag "#{ ta.photo}" %> 
            <% end %>
           </li>
         <% end -%>
@@ -41,7 +41,7 @@
      <ul>
        <% @contents.each do |p|%>
          <li>
-           <p class="title"><strong><%= link_to "#{p.title}", infos_extras_home_index_path(id: p.id) %></strong></p>
+           <h2 class="title"><strong><%= link_to "#{p.title}", infos_extras_home_index_path(id: p.id) %></strong></h2>
            </br>
            <p class="desc"><%= p.desc.html_safe %></p>
          </li>
