@@ -2,32 +2,32 @@
 /* CSS Document */
 
 body {
-	font-size:12px; 
+	font-size: 12px; 
 	font-family: "Microsoft YaHei"; 
-	color:#666666;
+	color: #666666;
 }
 a:link {
-	color:#666666;
-	text-decoration:none;
+	color: #666666;
+	text-decoration: none;
 }
 a:visited {
-	color:#666666;
-	text-decoration:none;
+	color: #666666;
+	text-decoration: none;
 }
 a:hover {
-	color:#ff6600;
-	text-decoration:none;
+	color: #ff6600;
+	text-decoration: none;
 }
 
 .head {
-	width:100%;
-	height:120px;
-	margin:0 auto;
+	width: 100%;
+	height: 120px;
+	margin: 0 auto;
 }
 .header{
 	width:100%;
 	height: 30px;
-	padding:5px;
+	padding: 5px;
 	text-align: center;
 	background-color: #fafafa;
 }
@@ -44,29 +44,29 @@ a:hover {
 	margin-bottom: -8px;
 }
 .keyword {
-	width:50%;
+	width: 50%;
 	float: right;
 	padding: 5px;
-	text-align:right;
-	margin-right:15%;
+	text-align: right;
+	margin-right: 15%;
 }
 .keyword span {
-	margin-right:20px;
+	margin-right: 20px;
 }
 
 .logo {
-	width:195px;
-	height:65px;
-	padding-top:26px;
+	width: 195px;
+	height: 65px;
+	padding-top: 26px;
 	clear: both;
-	float:left;
+	float: left;
 	margin-left: 150px;
 }
 
 .nav {
-	width:53%;
-	height:50px;
-	padding-top:26px;
+	width: 53%;
+	height: 50px;
+	padding-top: 26px;
 /*	background:url(/assets/nav_bg_03.png) repeat-x;*/
 /*	position:absolute;*/
 /*	z-index:999;*/
@@ -75,25 +75,25 @@ a:hover {
 
 }
 .nav ul {
-	width:902px;
-	height:50px;
-	margin:0 auto;
+	width: 902px;
+	height: 50px;
+	margin: 0 auto;
 }
 .nav ul li {
-	width:100px;
-	height:50px;
-	font-size:14px;
-	line-height:50px;
-	color:#333333;
-	float:left;
-	text-align:center;
+	width: 100px;
+	height: 50px;
+	font-size: 14px;
+	line-height: 50px;
+	color: #333333;
+	float: left;
+	text-align: center;
 }
 
 .nav ul li a {
-	display:block;
-	width:73px;
-	height:60px;
-	color:#333333;
+	display: block;
+	width: 73px;
+	height: 60px;
+	color: #333333;
 }
 .nav ul li a:hover {
 	/*background:url(/assets/nav_hover_03.png) no-repeat 0 bottom;*/
@@ -106,47 +106,47 @@ a:hover {
 }
 
 .banner {
-	width:100%; 
-	height:590px; 
-	position:relative;
+	width: 100%; 
+	height: 590px; 
+	position: relative;
 	clear: both;
 }
 .banner .list {
-	width:100%; 
-	height:590px; 
-	overflow:hidden; 
-	position:relative; 
-	z-index:1;
+	width: 100%; 
+	height: 590px; 
+	overflow: hidden; 
+	position: relative; 
+	z-index: 1;
 }
 .banner .list li {
-	width:100%; 
-	height:590px; 
-	position:absolute; 
-	left:0px; 
-	top:0px; 
-	display:none;
+	width: 100%; 
+	height: 590px; 
+	position: absolute; 
+	left: 0px; 
+	top: 0px; 
+	display: none;
 }
 
 .link{
 	height: 100%;
-	width: 100%
+	width: 100%;
 }
 .banner .btn {
-	position:absolute; 
-	bottom:10px; 
-	left:20%; 
-	margin-left:410px; 
-	z-index:100;
+	position: absolute; 
+	bottom: 10px; 
+	left: 20%; 
+	margin-left: 410px; 
+	z-index: 100;
 }
 .banner .btn li {
 	margin-left:12px; 
-	background:#fff; 
+	background: #fff; 
 	text-indent: -999em; 
 	float: left; 
 	width: 14px; 
 	height: 14px; 
 	cursor: pointer; 
-	border-radius:50%; 
+	border-radius: 50%; 
 }
 .banner .btn li.hover {
 	background: #FC3;
@@ -174,41 +174,41 @@ a:hover {
 @keyframes img2_7{0%{left:-400px;}  50%{right:-400px; opacity:0.1;} 100% {left:0; opacity:1;}}
 @-webkit-keyframes img2_7{0%{left:-400px;}  50%{right:-400px; opacity:0.3;} 100% {left:0; opacity:1;}}
 .product {
-	width:100%;
-	height:280px;
-	border-bottom:1px solid #d9d9d9;
+	width: 100%;
+	height: 280px;
+	border-bottom: 1px solid #d9d9d9;
 }
 .product-main {
-	width:1002px;
-	height:110px;
-	padding-top:80px;
-	margin:0 auto;
+	width: 1002px;
+	height: 110px;
+	padding-top: 80px;
+	margin: 0 auto;
 }
 .product-main ul li {
-	width:334px;
-	height:110px;
-	float:left;
+	width: 334px;
+	height: 110px;
+	float: left;
 }
 .product-main ul li .icon img {
 	width: 240px;
-	height:140px;
+	height: 140px;
 	position: relative;
 }
 
 .product-main ul a {
-	color:#666666;
+	color: #666666;
 }
 
 .icon {
-	width:110px;
-	float:left;
+	width: 110px;
+	float: left;
 	position: absolute;
 }
 
 .contact {
-	width:180px;
+	width: 180px;
 	height: 81px;
-	float:left;
+	float: left;
 	position: relative;
 	top: 0px;
 	background-color: #f8c900;
@@ -225,14 +225,13 @@ a:hover {
   .shape{
  	height: 30px;
  	width: 100px;
- 	border: 2px solid #ffffff ;
+ 	border: 2px solid #ffffff;
              margin: 0 auto;       
              padding: 20px; 
              font-size:19px;
-             font-family: "微软雅黑";
+             font-family: "Microsoft YaHei";
              color: #ffffff;
              text-align: center;
-             	
  }
 
 /*#方案与产品*/
@@ -245,32 +244,29 @@ a:hover {
 	width:100%;
 	height: auto;
 	overflow: hidden;
-	border-bottom:1px solid #d9d9d9;
+	border-bottom: 1px solid #d9d9d9;
 	padding-bottom: 80px;
 	background: url(/assets/back.gif) ;
 }
 .product-main_2 {
 	width:1002px;
 	height: auto;
-	padding-top:80px;
+	padding-top: 80px;
 	margin:0 auto;
 }
 .product-main_2 ul li {
-	width:320px;
+	width: 320px;
 	height: auto;
 	overflow: hidden;
 	float: left;    
 }
-
 .icon_2 {
-	width:280px;
+	width: 280px;
 	height: 100px;
 	overflow: hidden;	
 }
-
-
  .contact_2 {
-	width:240px;
+	width: 240px;
 	height: 30px;
 	font-size: 24px;
 	color: #ffffff;
@@ -286,8 +282,6 @@ a:hover {
 	background-color: #ffffff;
 	display: none;
 }
-
-
 .product-main_2 .mennu li{
 	text-decoration: none;
 	font-size: 18px;
@@ -304,20 +298,20 @@ a:hover {
 
 /*#动态资讯开始*/
  .product_3 {
-	width:100%;
+	width: 100%;
 	height: auto;
 	overflow: hidden;
-	border-bottom:1px solid #d9d9d9;
+	border-bottom: 1px solid #d9d9d9;
 
 }
 
 .product-main_3 {
-	width:1002px;
+	width: 1002px;
 	height: auto;
 	overflow: hidden;
-	padding-top:30px;
+	padding-top: 30px;
 	padding-bottom: 30px;
-	margin:0 auto;
+	margin: 0 auto;
 }
 
 .hyzx{ 
@@ -337,7 +331,7 @@ a:hover {
 
 .product_3 .gsdt {
 	float: left;
-              width:auto;
+              width: auto;
 	height: auto;
 	overflow: hidden;
 	font-size: 18px;
@@ -355,14 +349,13 @@ a:hover {
 
 
 .tex{
-              width:170px;
-              height:35px;
-              font-size:12px;
-              border: 0px;
-              border-top-left-radius: 5px;
-              border-bottom-left-radius: 5px;
-              padding-left:10px;
-              font-family: "Microsoft YaHei";
+	width: 170px;
+	height: 35px;
+	font-size: 12px;
+	border: 0px;
+	border-top-left-radius: 5px;
+	border-bottom-left-radius: 5px;
+	padding-left: 10px;
 }
 
 .sousuo {
@@ -370,13 +363,13 @@ a:hover {
 	width: 70px;
 	height: 35px;
 	border: 0px;
-              border-top-right-radius: 5px;
-              border-bottom-right-radius: 5px;
-              text-align: center;
-              line-height: 30px;
-              font-size: 14px;
-              color: #ffffff;
-              float: right;
+	border-top-right-radius: 5px;
+	border-bottom-right-radius: 5px;
+	text-align: center;
+	line-height: 30px;
+	font-size: 14px;
+	color: #ffffff;
+	float: right;
 }
 
 .product_3 .infos{
@@ -398,7 +391,7 @@ a:hover {
 	text-decoration: none;
 	width: auto;
 	overflow: hidden;
-	height:200px;
+	height: 200px;
 	margin-top: 30px;
 }
 .product_3 .infos .content{
@@ -413,7 +406,7 @@ a:hover {
 .product_3 .infos .content ul li{
 	text-decoration: none;
 	width: 650px;
-	height:180px;
+	height: 180px;
 	overflow: hidden;
 	padding: 10px;
 	background-color: #fafafa;
@@ -421,23 +414,17 @@ a:hover {
 	word-wrap: break-word;
 	text-align: left;
 }
-
 .product_3 .infos .content ul li .title{
 	font-size: 18px;
-	font-family: "微软雅黑";
-　　      overflow: hidden;
-              word-wrap: break-word;
-　　      text-overflow: ellipsis;
+	overflow: hidden;
+	word-wrap: break-word;
+	text-overflow: ellipsis;
 }
-
 .product_3 .infos .content ul li .desc{
-	font-family: "微软雅黑";
-　　      overflow: hidden;
-　　      text-overflow: ellipsis;
-              word-wrap: break-word;
+	overflow: hidden;
+ 	text-overflow: ellipsis;
+	word-wrap: break-word;
 }
-
-
 /*#动态资讯结束*/
 
 
@@ -506,38 +493,98 @@ a:hover {
 
 
 /*关于我们代码开始*/
-.gy {
+.abouts{
+	width:100%; 
+	height:826px; 
+	position:relative;
+	clear: both;
+}
+.abouts .list {
+	width:100%; 
+	height:826px; 
+	overflow:hidden; 
+	position:relative; 
+	z-index:1;
+}
+.abouts .list li {
+	width:100%; 
+	height:826px; 
+	position:absolute; 
+	left:0px; 
+	top:0px; 
+	display:none;
+}
+.introduct{
 	width: 100%;
+	height: 327px;
+	text-align: center;
+	padding-top: 80px;
+	background: url(/assets/jianjie.png) no-repeat 50% 0;
+}
+.introduct_cont{
+	width: 80%;
+	max-height: 300px;
+	height: 300px;
 	margin: 0 auto;
+	border:1px solid #000000;
+	overflow: hidden;
+              text-overflow: ellipsis;
+              word-wrap: break-word;
+
+}
+.culture{
+	width: 100%;
+	height: 102px;
+	text-align: center;
+	padding-top: 90px; 
+	background: url(/assets/wen.png) no-repeat 50% 0;
+}
+.culture_cont{
+	width: 100%;
+	height: 382px;
+	background: url(/assets/blue.png) no-repeat 50% 0;	
+}
+
+.visition{
+	width: 100%;
+	height: 93px;
+	text-align: center;
+	padding-top: 90px; 
+	background: url(/assets/yuan.png) no-repeat 50% 0;
+}
+.visition_cont{
+	width: 100%;
+	height: 210px;
+	background: url(/assets/plan.png) no-repeat 50% 0;	
+}
+.distribut{
+	width: 100%;
+	height: 180px;
+	text-align: center;
+	padding-top: 209px; 
+	background: url(/assets/zong.png) no-repeat 50% 0;	
+}
+.distribut_cont{
+	width: 100%;
+	height: 500px;
 	border-bottom: 1px solid #d9d9d9;
+	padding-top: 80px;
+	padding-bottom: 40px;
+	text-align: center;
+	background: url(/assets/map.png) no-repeat 50% 0;		
 }
-.gywm {
-	width:1002px;
-	height: auto;
-	margin:0 auto;
-	padding:20px 0 20px 0;
+.distribut_cont img{
+	margin-right: 30px;
 }
-.gywm h1 {
-	font-size:36px;
-	font-weight:normal;
-	color:#333333;
-	border-bottom:1px solid #d9d9d9;
-	line-height:60px;
+ .zmd{
+	width: 73%;
+	height: 259px;
+	padding-top: 60px;
+	margin: 0 auto;
 }
-.gywm h1 .eng {
-	font-size:18px;
-	color:#ff6600;
+ .zmd img{
+	margin-right: 30px;
 }
-
-.gywm h1 .location span {
-	color:#333333;
-}
-
-#container{
-  height:300px;
-  width: 100%;
-}  
-
 /*选项卡公共样式*/		
 #tags{
 	width:100%; 
@@ -643,38 +690,38 @@ a:hover {
 
 .cont {
 	width:100%;
-	height:auto;
-	padding:20px 0 20px 0;
+	height: auto;
+	padding: 20px 0 20px 0;
 }
 .cont .introduct {
 	height: auto;
-	padding:0 50px 20px 50px;
-	width:910px;
+	padding: 0 50px 20px 50px;
+	width: 910px;
 	font-size: 18px;
 	margin: 0 auto;
-	font-family: "微软雅黑";
+	font-family: "Microsoft YaHei";
 	word-wrap: break-word;
-　　      overflow: hidden;
-　　      text-overflow: ellipsis;
+	overflow:hidden; 
+	text-overflow: ellipsis;
 }
 
 .cont .detail{
 	height: auto;
 	width: 910px;
 	margin: 0 auto;
-	padding:0 50px 0 50px;
+	padding: 0 50px 0 50px;
 	font-size: 14px;
-	font-family: "微软雅黑";
+	font-family: "Microsoft YaHei";
 	word-wrap: break-word;
-　　      overflow: hidden;
-　　      text-overflow: ellipsis;
+	overflow:hidden; 
+	text-overflow: ellipsis;
 }
 
 .cont .action{
 	height: auto;
 	width: 910px;
 	margin: 0 auto;
-	padding:50px 50px 0 50px;
+	padding: 50px 50px 0 50px;
 	font-size: 14px;
 }
 
@@ -687,23 +734,23 @@ a:hover {
 }
 /*成功案例*/
 .cgal ul li{
-	width:170px;
-	padding-top:12px;
-	float:left;
-	margin-right:38px;
-	padding-bottom:20px;
+	width: 170px;
+	padding-top: 12px;
+	float: left;
+	margin-right: 38px;
+	padding-bottom: 20px;
 }
 .cgal ul .mr-none {
-	margin-right:0;
+	margin-right: 0px;
 }
 .cgal ul li h2 {
-	font-size:14px;
-	color:#333333;
-	font-weight:normal;
-	line-height:30px;
+	font-size: 14px;
+	color: #333333;
+	font-weight: normal;
+	line-height: 30px;
 }
 .gywm .cgal ul li p {
-	line-height:20px;
-	text-indent:0;
+	line-height: 20px;
+	text-indent: 0;
 }
 
