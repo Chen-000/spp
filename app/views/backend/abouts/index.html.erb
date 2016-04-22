@@ -2,7 +2,7 @@
     <ul>  
        <%= plate_link backend_abouts_path(:id => 1, :back => request.fullpath), is_first: true, color: 'red', title: '公司简介'%>     
        <%= plate_link backend_abouts_path(:id => 2, :back => request.fullpath), color: 'orange', title: '公司文化'%>   
-       <%= plate_link backend_abouts_path(:id => 3, :back => request.fullpath), color: 'light_blue', title: '公司分布'%>       
+       <%= plate_link countrys_backend_abouts_path(:id => 3, :back => request.fullpath), color: 'light_blue', title: '公司分布'%>       
      </ul>
   </div>
 
@@ -15,9 +15,7 @@
     <% if  params[:id]== '1' || params[:id].blank? %>
       <h1>公司简介<h1>
         <% elsif params[:id]== '2' %>
-      <h1>人才招聘<h1>
-        <% elsif params[:id]== '3' %>
-      <h1>联系我们<h1>
+      <h1>公司文化<h1>
     <% end %>
   </div>
 　<%= f.ueditor_text :content, :width => "70%", :class => "ml100" %>

@@ -1,17 +1,12 @@
-<%= form_for [:backend,@picture], html: {:class => "valid_engine establish", multipart: true} do |f| %>
+<%= form_for @picture, url: @picture.new_record? ?  save_about_picture_backend_abouts_path : up_picture_backend_about_path(@picture), html: {:class => "valid_engine establish", multipart: true} do |f| %>
   <div class="public_form">
     <p>
     <label class="label"><span>*</span>图片名称:</label>
     <%= f.text_field :name, class: 'validate[required] public_input' %>
     </p><br>
     <p>
-    <label class="label"><span>*</span>图片链接:</label>
-    <%= f.text_field :link, class: 'validate[required] public_input' %>
-    </p>
-    <br>
-    <p>
     <label class="label"><span>*</span>图片类别:</label>
-    <%=f.select :kind ,Picture::KIND.to_a.map(&:reverse), include_blank: '--请选择--', class: 'validate[required] public_input'%> 
+    <%=f.select :kind,[['公司分布','8']], class: 'validate[required] public_input'%> 
     </p>
   </div>
 

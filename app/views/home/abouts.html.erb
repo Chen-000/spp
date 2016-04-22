@@ -47,21 +47,32 @@
 <div class="distribut">
   <span><strong>公司分布</strong></span>
    <div class="distribut_decs">
-    <%= @distribut.content.html_safe%>
+    <p>那将是大技术撒收到护身符马萨萨基和那将是大技术撒收到护身符马萨萨基和那将是大技术撒收到护身符马萨萨基和</p>
   </div>
 </div>
 <div class="distribut_cont">
   <div class="countrys">
+    <marquee behavior= slide direction=left scrollamount=30 onmouseover="this.stop()" onmouseout="this.start()" >
       <ul>
        <% @countrys.each do |p|%>
          <% p.avatars.each do |ta|%>
            <li>
-             <%= image_tag "#{ta.photo}" %><br>
-             <p><strong><%= p.name%></strong></p>
+           <% if ta.photo.blank? %>
+             <%= image_tag "tam.png" %>
+             <%= image_tag "gz.png" %>
+             <%= image_tag "sh.png" %>
+             <%= image_tag "nt.png" %>
+           <% else %>
+             <%= image_tag "#{ta.photo}" %></br>
+             <p><strong><%= p.name %></strong></p>
+           <% end %>
+          </li>
+          <li>
           </li>
         <% end -%>
       <% end -%>
      </ul>
+    </marquee>
   </div>
 
 </div>

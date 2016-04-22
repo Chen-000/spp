@@ -1,34 +1,71 @@
 <% @pictures.each do|p|%>
 <% p.avatars.each do |ta|%>
   <div class="contacts" style="display: list-item;background:url(<%= ta.photo.url %>) no-repeat 50% 0;" class="bg1">
+
     <span>CONTACT US</span><br>
     <span>联系我们</span>
+
     <div class="contact_cont">
       <div class="view">
         <div class="cont">
-          <p class="title"></p><br>
-          <p class="content"></p>
+          <p class="title"><%= @bj.title%><span class="map"><a class="show_bj" >[查看地图]</a></span></p><br>
+          <p class="content">地址：<%= @bj.address %></p>
+          <p class="content">邮编：<%= @bj.poste %></p>
+          <p class="content">邮箱：<%= @bj.email %></p> 
+          <p class="content">电话：<%= @bj.phone %><p>
         </div>
         <div class="cont">
-          <p class="title"></p><br>
-          <p class="content"></p>
+          <p class="title"><%= @gz.title%><span class="map"><a class="show_gz" >[查看地图]</a></span></p><br>
+          <p class="content">地址：<%= @gz.address %></p>
+          <p class="content">邮编：<%= @gz.poste %></p>
+          <p class="content">邮箱：<%= @gz.email %></p> 
+          <p class="content">电话：<%= @gz.phone %><p>
         </div>
       </div>
 
       <div class="view_add">
         <div class="cont">
-          <p class="title"></p><br>
-          <p class="content"></p>
+          <p class="title"><%= @sh.title%><span class="map"><a class="show_sh" >[查看地图]</a></span></p><br>
+          <p class="content">地址：<%= @sh.address %></p>
+          <p class="content">邮编：<%= @sh.poste %></p>
+          <p class="content">邮箱：<%= @sh.email %></p> 
+          <p class="content">电话：<%= @sh.phone %><p>
         </div>
         <div class="cont">
-          <p class="title"></p><br>
-          <p class="content"></p>
+          <p class="title"><%= @nt.title%><span class="map"><a class="show_nt" >[查看地图]</a></span></p><br>
+          <p class="content">地址：<%= @nt.address %></p>
+          <p class="content">邮编：<%= @nt.poste %></p>
+          <p class="content">邮箱：<%= @nt.email %></p> 
+          <p class="content">电话：<%= @nt.phone %><p>
         </div>
       </div>
-
-    </div>
+  </div>
+      <iframe id="light_bj" class="white_content" src="map_bjs">  
+      </iframe>
+      <iframe id="light_gz" class="white_content" src="map_gzs">  
+      </iframe>
+      <iframe id="light_sh" class="white_content" src="map_shs">  
+      </iframe>
+      <iframe id="light_nt" class="white_content" src="map_nts">  
+      </iframe>
   </div>
 <% end %>
 <% end %>
 
+<script>  
+$(document).ready(function(){
+  $(".show_bj").click(function(){
+    $("#light_bj").toggle();
+  });
+  $(".show_gz").click(function(){
+    $("#light_gz").toggle();
+  });
+  $(".show_sh").click(function(){
+    $("#light_sh").toggle();
+  });
+  $(".show_nt").click(function(){
+    $("#light_nt").toggle();
+  });
+});
 
+</script>  

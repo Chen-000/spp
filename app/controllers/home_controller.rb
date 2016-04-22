@@ -13,8 +13,8 @@ layout "home"
 
   def informations
     @search = Info.ransack(params[:q])
-    @pictures = Picture.where(kind: 0)
-    @contents = @search.result.order("id desc").page(params[:page]).per(20)
+    @info = Info.where(kind: 0)
+    @infos = @search.result.order("id desc").page(params[:page]).per(20)
     @picture = Picture.where(kind: 4)
   end
 
@@ -33,7 +33,11 @@ layout "home"
   end
 
   def contacts
-    @lxwm = About.find(3)
+    @pictures = Picture.all.order('kind').page(params[:page]).per(20) 
+    @bj = Contact.find(1)
+    @gz = Contact.find(2)
+    @sh = Contact.find(3)
+    @nt = Contact.find(4)
     @pictures = Picture.where(kind: 6)
   end 
 
@@ -50,5 +54,16 @@ layout "home"
      @prev_page = true  if @prev 
      @next_page = true   if  @next
   end
-
+  def map_nts
+    render :layout =>false
+  end
+  def map_shs
+    render :layout =>false
+  end
+  def map_gzs
+    render :layout =>false
+  end
+  def map_bjs
+    render :layout =>false
+  end
 end
