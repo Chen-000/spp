@@ -1,0 +1,39 @@
+ <div class="plate">
+    <ul>  
+       <%= plate_link  new_backend_about_path(:id => 2, :back => request.fullpath), color: 'orange', title: '添加地区图片'%>    
+     </ul>
+  </div>
+  
+  <div class="well_head">
+  <table class="common">
+    <tbody>
+      <tr>
+        <td>序号</td>
+        <td>图片标题</td>
+        <td>图片类别</td>
+        <td>图片内容</td>
+        <td>操作</td>
+      </tr>
+      <% @about_pictures.each_with_index do |ap, index| %>
+        <tr>
+          <td><%= index+1 %></td>
+          <td><%= ap.try(:name) %></td>
+          <td><%= Picture::KIND[ap.try(:kind)] %></td>
+         <td>
+           <% ap.avatars.each do |ta|%>
+             <a class="pic" href="<%= ta.photo.url %>" ><%= image_tag(ta.photo.url, size: "100x80", title: '点击放大') %></a>
+          <% end %>
+         </td>
+         <td>
+         <%= link_to '修改', edit_backend_about_path(ap, :back => request.fullpath)%>
+         <%= link_to '删除', backend_about_path(ap, :back => request.fullpath), data: {method: :delete,confirm: "你确定删除?"} %>
+         </td>
+        </tr>
+      <% end -%>
+
+     
+    </tbody>
+  </table>
+</div>
+
+

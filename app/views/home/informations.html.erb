@@ -23,7 +23,7 @@
   <div class="infos">
     <div class="picture">
       <ul>
-       <% @contents.each do |p|%>
+       <% @infos.each do |p|%>
          <% p.avatars.each do |ta|%>
            <li>
            <% if ta.photo.blank? %>
@@ -39,7 +39,7 @@
 
    <div class="content">
      <ul>
-       <% @contents.each do |p|%>
+       <% @infos.each do |p|%>
          <li>
            <h2 class="title"><strong><%= link_to "#{p.title}", infos_extras_home_index_path(id: p.id) %></strong></h2>
            </br>
@@ -50,7 +50,7 @@
    </div>
 
   </div>
-      <%= paginate @contents%>
+      <%= paginate @infos%>
   </div>
  
 </div>

@@ -1,0 +1,38 @@
+ <div class="plate">
+    <ul>  
+       <%= plate_link new_cultures_backend_abouts_path(:back => request.fullpath), color: 'orange', title: '添加公司文化图片'%>    
+     </ul>
+  </div>
+  
+  <div class="well_head">
+  <table class="common">
+    <tbody>
+      <tr>
+        <td>序号</td>
+        <td>图片标题</td>
+        <td>图片类别</td>
+        <td>图片内容</td>
+        <td>操作</td>
+      </tr>
+      <% @about_pictures.each_with_index do |culture, index| %>
+        <tr>
+          <td><%= index+1 %></td>
+          <td><%= culture.try(:name) %></td>
+          <td><%= Picture::KIND[culture.try(:kind)] %></td>
+         <td>
+           <% culture.avatars.each do |ta|%>
+             <a class="pic" href="<%= ta.photo.url %>" ><%= image_tag(ta.photo.url, size: "100x80", title: '点击放大') %></a>
+          <% end %>
+         </td>
+         <td>
+         <%= link_to '修改', edit_culture_backend_abouts_path(culture, :back => request.fullpath)%>
+         <%= link_to '删除', destroy_culture_backend_abouts_path(culture, :back => request.fullpath), data: {method: :delete,confirm: "你确定删除?"} %>
+         </td>
+        </tr>
+      <% end -%> 
+
+    </tbody>
+  </table>
+</div>
+
+

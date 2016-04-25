@@ -23,10 +23,13 @@ Rails.application.routes.draw do
       get :ajax_query
       get :infos_extras
       get :prod_extras
+      get :map_nts
+      get :map_bjs
+      get :map_shs
+      get :map_gzs
     end
   end
   
-
   namespace :backend do
          #ueditor编辑器
   mount UeditorRails::Engine => '/ueditor'
@@ -39,8 +42,15 @@ Rails.application.routes.draw do
     resources :abouts do
       collection do
         get :edit_detail
+        get :countrys
+        post :save_about_picture
+        
+      end
+      member do
+        patch :up_picture
       end
     end
+    resources :contacts 
     resources :products do
       collection do
         get :file_delete

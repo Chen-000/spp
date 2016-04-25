@@ -1,0 +1,42 @@
+<div class="plate">
+    <ul>
+     <%= plate_link new_backend_contact_path(:back => request.fullpath), is_first:'true',color: 'red', title: '新增信息', desc: '添加信息' %>
+    </ul>
+  </div>
+  <div class="line"></div> 
+<div class="well_head">
+  <table class="common">
+    <tbody>
+      <tr>
+        <td>序号</td>
+        <td>公司名称</td>
+        <td>公司地址</td>
+        <td>邮编</td>
+        <td>邮箱</td>
+        <td>电话</td>
+        <td>图片内容</td>
+        <td>操作</td>
+      </tr>
+
+      <% @contacts.each_with_index  do |contact, index| %>
+        <tr>
+         <td><%= index_no(index, 20)%></td>
+         <td><%= contact.title %></td>
+         <td><%= contact.address %></td>
+         <td><%= contact.poste %></td>
+         <td><%= contact.email %></td>
+         <td><%= contact.phone %></td>
+         <td>
+           <% contact.avatars.each do |ta|%>
+             <a class="pic" href="<%= ta.photo.url %>" ><%= image_tag(ta.photo.url, size: "100x80", title: '点击放大') %></a>
+          <% end %>
+         </td>
+         <td>
+         <%= link_to '修改', edit_backend_contact_path(contact, :back => request.fullpath)%>
+         <%= link_to '删除', backend_contact_path(contact, :back => request.fullpath), data: {method: :delete,confirm: "你确定删除?"} %>
+         </td>
+       </tr>
+       <% end %>
+    </tbody>
+  </table>
+</div>
