@@ -15,6 +15,44 @@
 /log/*.log
 /tmp
 config/*.yml
+
+.bundle
+.sass-cache/
+.idea/*
+.idea/
+.DS_Store
+tags
+*.swp
+*.log
+log/*
+tmp/*
+nbproject/*
+repe*
+solr/*
+
+config/database.yml
+config/payment.yml
+config/sphinx.yml
+config crets.yml
+config tting.yml
+config/*.sphinx.conf
+config/initializers/imgkit.rb
+
+public/system/*
+public/cache/*
+public/assets/*
+public/index.html
+public/uploads/*
+public/barcodes/*
+public fs/*
+
+vendor/cache
+vendor ndle/
+
+db/schema.rb
+db/sphinx/*
+
 Gemfile.lock
+
 
 
