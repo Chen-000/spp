@@ -657,6 +657,9 @@ a:hover {
 .cont .title .map{
 	color: #FF0033;
 }
+.cont .title .map a{
+	 cursor: pointer;
+}
 .cont .content{
  	font-size: 18px;
  }
@@ -676,11 +679,21 @@ a:hover {
 	overflow:hidden; 
 	text-overflow: ellipsis;
 }
-.white_content{
+.content_bj{
 	width:50%; 
 	height:500px; 
 	position: absolute; 
 	left: 800px;
+	top: 300px;
+	display: none;
+	overflow: hidden;
+}
+
+.content_gz{
+	width:50%; 
+	height:500px; 
+	position: absolute; 
+	left: 100px;
 	top: 300px;
 	display: none;
 	overflow: hidden;

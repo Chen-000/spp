@@ -43,11 +43,17 @@ Rails.application.routes.draw do
       collection do
         get :edit_detail
         get :countrys
-        post :save_about_picture
-        
+        post :save_about_picture   
+        get :cultures 
+        get :new_cultures
+        get :edit_culture
+        post :create_culture
+        post :save_about_culture
+        delete :destroy_culture
       end
       member do
         patch :up_picture
+        patch :up_culture
       end
     end
     resources :contacts 
