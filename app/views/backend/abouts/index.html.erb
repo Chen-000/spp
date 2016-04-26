@@ -1,7 +1,7 @@
  <div class="plate">
     <ul>  
        <%= plate_link backend_abouts_path(:id => 1, :back => request.fullpath), is_first: true, color: 'red', title: '公司简介'%>     
-       <%= plate_link backend_abouts_path(:id => 2, :back => request.fullpath), color: 'orange', title: '公司文化'%>   
+       <%= plate_link cultures_backend_abouts_path(:id => 2, :back => request.fullpath), color: 'orange', title: '公司文化'%>   
        <%= plate_link countrys_backend_abouts_path(:id => 3, :back => request.fullpath), color: 'light_blue', title: '公司分布'%>       
      </ul>
   </div>
