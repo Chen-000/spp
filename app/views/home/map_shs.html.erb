@@ -1,4 +1,0 @@
-<% @picture = Picture.where("name = '上海' ").first %>
-<% @picture.avatars.each do |ta|%>
-<%= image_tag "#{ta.photo}"  %>
-<% end %>

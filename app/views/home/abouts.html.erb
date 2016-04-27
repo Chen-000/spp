@@ -24,14 +24,7 @@
        <% @zmd.each do |p|%>
          <% p.avatars.each do |ta|%>
            <li>
-           <% if ta.photo.blank? %>
-             <%= image_tag "spp.png" %>
-             <%= image_tag "job.png" %>
-             <%= image_tag "people.png" %>
-             <%= image_tag "environment.png" %>
-           <% else %>
              <%= image_tag "#{ta.photo}" %>
-           <% end %>
           </li>
         <% end -%>
       <% end -%>
@@ -47,7 +40,8 @@
 <div class="distribut">
   <span><strong>公司分布</strong></span>
    <div class="distribut_decs">
-    <p>那将是大技术撒收到护身符马萨萨基和那将是大技术撒收到护身符马萨萨基和那将是大技术撒收到护身符马萨萨基和</p>
+    <p>公司总部位于北京市西城区，并于广州、上海、南通等 地设立分支机构。优秀而富有经验的人才团队是阳光公采最大的核心优势与最宝贵的财富。
+    </p>
   </div>
 </div>
 <div class="distribut_cont">
@@ -57,15 +51,8 @@
        <% @countrys.each do |p|%>
          <% p.avatars.each do |ta|%>
            <li>
-           <% if ta.photo.blank? %>
-             <%= image_tag "tam.png" %>
-             <%= image_tag "gz.png" %>
-             <%= image_tag "sh.png" %>
-             <%= image_tag "nt.png" %>
-           <% else %>
              <%= image_tag "#{ta.photo}" %></br>
              <p><strong><%= p.name %></strong></p>
-           <% end %>
           </li>
           <li>
           </li>

@@ -34,10 +34,7 @@ layout "home"
 
   def contacts
     @pictures = Picture.all.order('kind').page(params[:page]).per(20) 
-    @bj = Contact.find(1)
-    @gz = Contact.find(2)
-    @sh = Contact.find(3)
-    @nt = Contact.find(4)
+    @contacts = Contact.all
     @pictures = Picture.where(kind: 6)
   end 
 
