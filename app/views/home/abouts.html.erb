@@ -8,14 +8,14 @@
    <% end %>
   </ul>
 </div>
-<div class="introduct">
-  <span><strong>公司简介 </strong></span>
-  <div class="introduct_cont">
+<div class="about_introduct">
+  <span class="about_title"><strong>公司简介 </strong></span>
+  <div class="introduct_cont about_desc">
     <%= @content.content.html_safe%>
   </div>
 </div>
 <div class="culture">
-  <span><strong>公司文化 </strong></span>
+  <span class="about_title"><strong>公司文化 </strong></span>
 </div>
 <div class="culture_cont">
    <div class="zmd">
@@ -33,14 +33,14 @@
   </div>
 </div>
 <div class="visition">
-  <span><strong>公司愿景 </strong></span>
+  <span class="about_title"><strong>公司愿景 </strong></span>
 </div>
 <div class="visition_cont">
 </div>
 <div class="distribut">
-  <span><strong>公司分布</strong></span>
+  <span class="about_title"><strong>公司分布</strong></span>
    <div class="distribut_decs">
-    <p>公司总部位于北京市西城区，并于广州、上海、南通等 地设立分支机构。优秀而富有经验的人才团队是阳光公采最大的核心优势与最宝贵的财富。
+    <p  class="about_desc">公司总部位于北京市西城区，并于广州、上海、南通等 地设立分支机构。优秀而富有经验的人才团队是阳光公采最大的核心优势与最宝贵的财富。
     </p>
   </div>
 </div>
@@ -52,7 +52,7 @@
          <% p.avatars.each do |ta|%>
            <li>
              <%= image_tag "#{ta.photo}" %></br>
-             <p><strong><%= p.name %></strong></p>
+             <p class="about_title"><strong><%= p.name %></strong></p>
           </li>
           <li>
           </li>

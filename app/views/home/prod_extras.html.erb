@@ -1,3 +1,15 @@
+<div class="banner">
+  <ul class="list">
+    <% @picture.each do|p|%>
+     <% p.avatars.each do |ta|%>
+       <li style="display: list-item;background:url(<%= ta.photo.url %>) no-repeat 50% 0;" class="bg1" >
+       </li>
+     <% end %>
+   <% end %>
+  </ul>
+</div>
+
+
 <div class="ex">
 <div class="desc">
 <div class="extra">
@@ -12,7 +24,7 @@
     </h1>
   </div>
 <div class="cont">
-  <div class="introduct">
+  <div class="introducts">
    <span><%=@content.introduction.html_safe%></span>
   </div>
   <div class="detail">

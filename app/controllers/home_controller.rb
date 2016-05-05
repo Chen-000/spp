@@ -33,13 +33,13 @@ layout "home"
   end
 
   def contacts
-    @pictures = Picture.all.order('kind').page(params[:page]).per(20) 
     @contacts = Contact.all
     @pictures = Picture.where(kind: 6)
   end 
 
   def prod_extras
      @content = Product.find(params[:id])
+     @picture = Picture.where(kind: 3)
   end
 
   def infos_extras
@@ -50,17 +50,5 @@ layout "home"
      @next = Info.where("id > ?", @contents.id).first
      @prev_page = true  if @prev 
      @next_page = true   if  @next
-  end
-  def map_nts
-    render :layout =>false
-  end
-  def map_shs
-    render :layout =>false
-  end
-  def map_gzs
-    render :layout =>false
-  end
-  def map_bjs
-    render :layout =>false
   end
 end
