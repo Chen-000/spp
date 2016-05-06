@@ -14,12 +14,12 @@
 
     <div class="public_form">
       <label class="label">产品简介:</label>
-      <span class="validate-name"><%= @product.introduction %></span>
+      <div class='mb20 document_content'><p><%= @product.introduction %></p></div>
     </div>
 
     <div class="public_form">
       <label class="label">产品详情:</label>
-      <span class="validate-name"><%= @product.detail.html_safe %></span>
+      <div  class='mb20 document_content'><p><%= @product.detail.html_safe %></p></div>
     </div>
 
     <h3 class='mt20'>附件下载</h3>
