@@ -655,15 +655,14 @@ a:hover {
 }
 .contact_cont  .view{
 	margin: 0 auto;
-	width: 90%;
-	height: 40%;
+	width: 850px;
+	height: 220px;
 	padding-top: 40px;
 	border-bottom:1px  dashed #d9d9d9; 
 }
 .view  ul li{
-	width: 47%;
+	width: 425px;
 	height: 300px;
-	padding-left: 20px;
 	float: left;
 	text-align: left;
 	word-wrap: break-word;
@@ -742,7 +741,7 @@ p{ text-indent:2em;}
 
 
 #leftcon .subbox .sublist{
-	width:1002px;
+	width:1000px;
 }
 .sublist p {
 	line-height:28px;
@@ -771,14 +770,14 @@ p{ text-indent:2em;}
 }
 
 .ex .desc {
-	width:1152px;
+	width:1150px;
 	height: auto;
 	margin:0 auto;
 	padding-top: 20px;
 
 }
 .extra {
-	width:1102px;
+	width:1100px;
 	height: auto;
 	margin:0 auto;
 	padding:20px 0 20px 0;
@@ -816,8 +815,7 @@ p{ text-indent:2em;}
 }
 .cont .introducts {
 	min-height: 50px;
-	padding: 0 50px 20px 50px;
-	width:1200px;
+	width:1100px;
 	margin: 0 auto;
 	font-family: "Microsoft YaHei";
 	word-wrap: break-word;
@@ -826,10 +824,9 @@ p{ text-indent:2em;}
 }
 
 .cont .detail{
-	width:1200px;
+	width:1100px;
 	min-height: 300px;
 	margin: 0 auto;
-	padding: 0 50px 0 50px;
 	font-size: 14px;
 	font-family: "Microsoft YaHei";
 	word-wrap: break-word;

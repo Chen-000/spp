@@ -788,6 +788,11 @@ input[type='text'].common.w185 {
     margin: 5px;
     line-height: 20px;
   }
+  p{
+    word-wrap: break-word;
+    overflow:hidden; 
+    text-overflow: ellipsis;
+  }
 }
 
 

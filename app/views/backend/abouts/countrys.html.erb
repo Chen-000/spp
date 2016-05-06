@@ -24,7 +24,7 @@
              <a class="pic" href="<%= ta.photo.url %>" ><%= image_tag(ta.photo.url, size: "100x80", title: '点击放大') %></a>
           <% end %>
          </td>
-         <td>
+         <td class="textc operation">
          <%= link_to '修改', edit_backend_about_path(ap, :back => request.fullpath)%>
          <%= link_to '删除', backend_about_path(ap, :back => request.fullpath), data: {method: :delete,confirm: "你确定删除?"} %>
          </td>
