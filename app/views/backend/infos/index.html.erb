@@ -1,7 +1,6 @@
 <div class="plate">
   <ul>
-    <%= plate_link new_backend_info_path(:back => request.fullpath), is_first:'true', color:'green' , title:  '新建资讯', desc: '添加资讯' %>
-    <%= plate_link backend_infos_path(:back => request.fullpath), color:'red' , title:  '资讯管理', desc: '资讯管理' %>
+    <%= plate_link new_backend_info_path(:back => request.fullpath), is_first:'true', color:'green' , title:  '新建资讯动态', desc: '添加资讯' %>
   </ul>
 </div>
 
@@ -13,12 +12,14 @@
       <tbody>
         <tr>
           <td>序号</td>
+          <td>类别</td>
           <td>名称</td>
           <td>操作</td>
         </tr>
         <% @infos.each_with_index do |info,index| %>
           <tr>
             <td><%= index_no(index, 20)%></td>
+            <td><%= Info::KIND[info.kind]%></td>
             <td><%= info.title%></td>
             <td class="textc operation">
               <%=link_to "查看" , backend_info_path(info, :back => request.fullpath) %>

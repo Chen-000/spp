@@ -2,7 +2,7 @@ class Backend::InfosController <Backend::BaseController
   before_action :find_info
 
   def index
-    @infos = Info.all.order('id desc').page(params[:page]).per(20)    
+    @infos = Info.all.order('kind desc').page(params[:page]).per(20)    
   end
 
   def new
@@ -40,7 +40,7 @@ class Backend::InfosController <Backend::BaseController
 
   private
     def info_params
-      params.require(:info).permit(:title, :desc )  
+      params.require(:info).permit(:title, :desc, :kind )  
     end
 
     def find_info

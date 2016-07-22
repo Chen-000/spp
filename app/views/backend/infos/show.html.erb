@@ -1,7 +1,7 @@
 <% list_link = backend_infos_path(:back => request.fullpath) %>
 
 <h1>
-  <%= "#{@info.try(:title)}"%>资讯详情：
+  <%= "#{@info.try(:title)}"%>资讯动态详情：
 
   <%= link_to '返回', params[:back] || list_link %>
   <%= link_to '修改', edit_backend_info_path(@info, :back => request.fullpath)%>
@@ -11,6 +11,11 @@
 
   <div class='mb20 document_content'>
     <p><%= @info.desc.html_safe rescue nil%></p>
+  </div>
+
+  <div class="public_form">
+    <label class="label">类别：</label>
+    <span class="validate-name"><%= @info.kind %></span>
   </div>
 
   <div class="public_form">
