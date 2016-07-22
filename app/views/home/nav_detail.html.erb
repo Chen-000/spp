@@ -1,0 +1,10 @@
+<div class="product_2">
+  <div class="product-main_2">
+      <% @nav.each do |w|%>
+         <h4 class="product_title"><%= w.name.html_safe  %></h4>
+         <div class="product_desc">
+          <%= w.detail.html_safe  %>
+          </div>
+      <% end %>
+  </div>
+</div>

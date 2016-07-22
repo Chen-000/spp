@@ -12,40 +12,101 @@
 
 <body>
 <div class="head">
+<div class="head_top">
 <div class="header">
     <div class="number"><%= image_tag "house.jpg" %><span>您好，欢迎来到阳光公采</span></div>
   <div class="keyword">
     <span>客服热线：400-965-9565</span>
-    <span>工作时间：工作日：08：00-18：30</span>
+    <span>工作时间： 工作日（08：00-18：30）</span>
   </div> 
+  </div>
 </div>
+<div class="head_main">
   <div class="logo"><%= image_tag "logo_03.png" %></div>
 <!--   <div class="number"></div>
   <div class="keyword">
     <span><a href="http://www.sinopr.org" target="_blank">公共资源交易网</a></span>
     <span><a href="http://www.biaoxun.com.cn" target="_blank">标讯网</a></span>
   </div>  -->
-  <div class="nav">
-  <ul>
-    <li class="li-other"><%= link_to "首页", root_path%></li>
-    <li><%= link_to "方案与产品", products_home_index_path%></li>
-    <li><%= link_to "资讯动态", informations_home_index_path%></li>
-<!--     <li><a href="jcyy.html">基础应用</a></li>
-    <li><a href="ydzd.html">移动终端</a></li> -->
-    <!--<li><a href="cgal.html">成功案例</a></li>-->
-    <li><%= link_to "关于我们", abouts_home_index_path%></li>
-    <li><%= link_to "联系我们", contacts_home_index_path%></li> 
+  <ul id="nav">
+
+    <li class="li-other menu"><%= link_to "首页", root_path, class: "bg_title"%></li>
+
+     <li class="menu">
+       <%= link_to "解决方案", products_home_index_path, class: 'title bg_title'%>
+       <ul class="submenu">
+        <% Nav.where(kind: 2).each do |f| %>
+         <li>
+          <%= link_to "#{f.name}","#{f.link}?id=#{f.id}",class: "title"%> 
+         </li>
+        <%end%>
+       </ul>
+       </li>
+
+     <li class="menu">
+       <%= link_to " 成功案例", cases_home_index_path,class: 'title bg_title' %>
+     </li>
+
+    <li class="menu">
+      <%= link_to "资讯动态", informations_home_index_path, class: 'title bg_title'%>
+      <ul class="submenu">
+        <% Nav.where(kind: 4).each do |f| %>
+        <li>
+          <%= link_to "#{f.name}","#{f.link}",class: 'title'%> 
+         </li>
+        <%end%>
+       </ul>
+   </li>
+
+    <li class="menu">
+      <%= link_to "关于我们", abouts_home_index_path, class: 'title bg_title'%>
+      <ul class="submenu">
+         <% Nav.where(kind: 5).each do |f| %>
+        <li>
+          <%= link_to "#{f.name}","#{f.link}",class: 'title'%> 
+         </li>
+        <%end%>
+       </ul>
+    </li>
+
+    <li class="menu">
+      <%= link_to " 广纳贤才", employ_home_index_path, class: "bg_title"%>
+    </li> 
 
   </ul>
 </div>
 </div>
-
-
 <%= yield %>
 <div class="footer">
 北京阳光公采科技有限公司 &nbsp;   &nbsp;   &nbsp; 电话: 400-965-9565 &nbsp;   &nbsp;   &nbsp; 京ICP备13031958号-1
 <!-- <script src="http://s4.cnzz.com/z_stat.php?id=1255166650&web_id=1255166650" language="JavaScript"></script> -->
 </div> 
 
+<div class="top_back">
+  <a href="#" id="returnTop"><%=image_tag "top_backs.png"%></a>
+</div>
+<script type="text/javascript">
+  $("#returnTop").click(function(){
+    var speed = 200;
+    $('body,html').animate({scrollTop:0},speed);
+    return false;
+  })
+</script>
+
 </body>
 </html>
+
+<script type="text/javascript">
+  $(function() {
+      $("#nav li").hover(
+          function() {
+             $(this).find("ul").show(100);
+              $(this).find(".bg_title").addClass("bg_yellow");
+                            },
+          function() {
+              $(this).find("ul").hide(300);
+              $(this).find(".bg_title").removeClass("bg_yellow");
+                            }
+                        );
+    });
+</script>

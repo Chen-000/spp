@@ -1,3 +1,21 @@
+<script>
+function setTab(tab_id,name,cursel){
+  var links = document.getElementById("tab"+tab_id).getElementsByTagName('li');
+  links_len=links.length;
+  for(var i=1; i<=links_len; i++){
+    var menu = document.getElementById(name+i);
+    var menudiv = document.getElementById("con_"+name+"_"+i);
+    if(i==cursel){
+      menu.className="bg_orange";
+      menudiv.style.display="block";
+    }else{
+      menu.className="";
+      menudiv.style.display="none";
+    }
+  }
+}
+</script>
+
 <div class="abouts">
   <ul class="list">
     <% @pictures.each do|p|%>
@@ -9,13 +27,13 @@
   </ul>
 </div>
 <div class="about_introduct">
-  <span class="about_title"><strong>公司简介 </strong></span>
+  <a name="gsjj"><span class="about_title"><strong>公司简介 </strong></span></a>
   <div class="introduct_cont about_desc">
     <%= @content.content.html_safe%>
   </div>
 </div>
 <div class="culture">
-  <span class="about_title"><strong>公司文化 </strong></span>
+  <a name="gswh"><span class="about_title"><strong>公司文化 </strong></span></a>
 </div>
 <div class="culture_cont">
    <div class="zmd">
@@ -33,12 +51,12 @@
   </div>
 </div>
 <div class="visition">
-  <span class="about_title"><strong>公司愿景 </strong></span>
+  <a name="gsyj"><span class="about_title"><strong>公司愿景 </strong></span></a>
 </div>
 <div class="visition_cont">
 </div>
 <div class="distribut">
-  <span class="about_title"><strong>公司分布</strong></span>
+  <a name="gsfb"><span class="about_title"><strong>公司分布</strong></span></a>
    <div class="distribut_decs">
     <p  class="about_desc">公司总部位于北京市西城区，并于广州、上海、南通等 地设立分支机构。优秀而富有经验的人才团队是阳光公采最大的核心优势与最宝贵的财富。
     </p>
@@ -46,22 +64,40 @@
 </div>
 <div class="distribut_cont">
   <div class="countrys">
-    <marquee behavior= slide direction=left scrollamount=30 onmouseover="this.stop()" onmouseout="this.start()" >
-      <ul>
-       <% @countrys.each do |p|%>
-         <% p.avatars.each do |ta|%>
-           <li>
-             <%= image_tag "#{ta.photo}" %></br>
-             <p class="about_title"><strong><%= p.name %></strong></p>
-          </li>
-          <li>
-          </li>
-        <% end -%>
-      <% end -%>
+   <div class="contacts">
+    <a name="lxwm" class="contrct"> <span>CONTACT US</span></a>   <br>
+    <span>联系我们</span>
+    </div>
+   <div id="tab1">
+     <ul class="menue">
+       <li id="one1" onclick="setTab(1,'one',1)" class="bg_orange " >北京</li>
+       <li id="one2" onclick="setTab(1,'one',2)">广州</li>
+       <li id="one3" onclick="setTab(1,'one',3)">上海</li>
+       <li id="one4" onclick="setTab(1,'one',4)">南通</li>
      </ul>
-    </marquee>
-  </div>
-
+     <div class="goods_1 fl country_desc">
+       <div class="menue_cont">
+        <% @contacts.each_with_index do |contact, index|%>
+          <% contact.avatars.each do |ta|%>
+           <li class="fl hide" id="con_one_<%= index+1%>">
+            <div class="map_img"><%= image_tag "#{ta.photo}"  %></div>
+            <div class="map_content"><p class="title"><%= contact.title%></p>
+            <p class="content">地址：<%= contact.address %></p>
+            <p class="content">邮编：<%= contact.poste %></p>
+            <p class="content">邮箱：<%= contact.email %></p> 
+            <p class="content">电话：<%= contact.phone %><p> 
+            </div>
+           </li>
+        <% end %> 
+      <% end %>  
+      <div class="about_bg"></div>
+      </div>  
+     </div>
+   </div>
 </div>
 
+  </div>
+</div>
+
+</div> 
 

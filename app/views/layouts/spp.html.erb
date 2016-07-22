@@ -16,6 +16,7 @@
         <ul>
           <!-- li class="nav_other"><li -->
             <li> <%= link_to "管理员设置",  edit_user_registration_path %></li>
+            <li> <%=link_to '导航管理', backend_navs_path %></li>
             <li> <%=link_to '图片管理', backend_pictures_path %></li>
             <li> <%=link_to '资讯动态', backend_infos_path %></li>
             <li> <%= link_to "产品与方案",backend_products_path%></li>
@@ -50,7 +51,6 @@
         <div class="content">
           <%= yield %>
         </div>
-
       </div>
 
     </div>
