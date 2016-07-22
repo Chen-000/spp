@@ -4,11 +4,13 @@ layout "home"
   def index
     @pictures = Picture.where(kind: 1)
   end
+
   def products
         @wssc = Product.where(kind: 2)
         @dzjyh= Product.where(kind: 3)
         @qtyy = Product.where(kind: 4)
         @pictures = Picture.where(kind: 3)
+        @nav = Nav.where(kind:2)
   end
 
   def informations
@@ -16,6 +18,23 @@ layout "home"
     @info = Info.where(kind: 0)
     @infos = @search.result.order("id desc").page(params[:page]).per(20)
     @picture = Picture.where(kind: 4)
+  end
+
+  def nav_detail
+    @nav = Nav.where("kind = ? and id = ?",2,params[:id])
+  end
+
+  def cases
+    name = Nav.where(kind: 3).first.name
+    nav = Nav.where(name: name).last
+    @content = nav.detail
+    #@nav = Nav.where("kind = ? and id = ?",3,params[:id])
+  end
+
+  def employ
+    name = Nav.where(kind: 6).first.name
+    nav = Nav.where(name: name).last
+    @content = nav.detail
   end
 
   # def ajax_query
@@ -30,6 +49,7 @@ layout "home"
     @pictures = Picture.where(kind: 5)
     @content = About.find(1)
     @distribut = About.find(3)
+    @contacts = Contact.all
   end
 
   def contacts

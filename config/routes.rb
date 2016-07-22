@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+
+
   # mount UeditorRails::Engine => '/ueditor'
   #1，我们指定自己的 Controller 来处理；
   #2，继承 devise；
@@ -23,6 +25,9 @@ Rails.application.routes.draw do
       get :ajax_query
       get :infos_extras
       get :prod_extras
+      get :nav_detail
+      get :cases
+      get :employ
       get :map_nts
       get :map_bjs
       get :map_shs
@@ -65,6 +70,7 @@ Rails.application.routes.draw do
     end
     resources :product_manages
     resources :programmes
+    resources :navs 
   end
 
 

@@ -9,6 +9,7 @@ body {
 a:link {
 	color: #666666;
 	text-decoration: none;
+	cursor: pointer;
 }
 a:visited {
 	color: #666666;
@@ -18,21 +19,46 @@ a:hover {
 	color: #ff6600;
 	text-decoration: none;
 }
-
+#nav li{
+    list-style-type: none;
+    font-size: 14px;
+    text-align: left;
+ }
+ .bg_yellow{
+ 	background: #FFB81E;
+ }
+.f12{
+    font-size:12px;
+}
+.ml5{
+    margin-left:5px;
+}
+.fl{
+	float: left;
+}
+.clear{
+   clear:both;
+}
 .head {
 	width: 100%;
 	height: 120px;
 	margin: 0 auto;
 }
-.header{
-	width:100%;
-	height: 30px;
-	padding: 5px;
-	text-align: center;
+.head_top{
+	width: 100%;
 	background-color: #fafafa;
+	height: 40px;
+	line-height: 40px;
+}
+.header{
+	width:1035px;
+	height: 30px;
+	line-height: 30px;
+	text-align: center;
+	margin: 0 auto;
+
 }
 .number {
-	width: 35%;
 	height: 10px;
 	padding: 5px;
 	float: left;
@@ -43,62 +69,96 @@ a:hover {
 	margin-bottom: -8px;
 }
 .keyword {
-	width: 40%;
 	float: right;
 	padding: 5px 5px 5px 0px;
 	text-align: left;
+	margin: 0 auto;
 }
 .keyword span {
 	margin-right: 20px;
 }
-
-.logo {
-	width: 35%;
-	text-align: center;
-	height: 65px;
-	padding-top: 26px;
-	clear: both;
-	float: left;
-	margin-left: 2%;
-}
-
-.nav {
-	width: 57%;
-	height: 50px;
-	padding-top: 26px;
-               float: right;
-
-}
-.nav ul {
-	width: 570px;
-	height: 50px;
+.head_main{
+	width: 1030px;
 	margin: 0 auto;
 }
-.nav ul li {
-	width: 100px;
-	height: 50px;
-	font-size: 14px;
-	line-height: 50px;
-	color: #333333;
-	float: left;
+.logo {
 	text-align: center;
+	height: 65px;
+              line-height: 65px;
+	clear: both;
+	float: left;
+	margin-top: 30px;
 }
 
-.nav ul li a {
-	display: block;
-	width: 90px;
-	height: 60px;
-	color: #333333;
-}
-.nav ul li a:hover {
-	/*background:url(/assets/nav_hover_03.png) no-repeat 0 bottom;*/
-	border-bottom: 4px solid #ffbb18;
+#nav { 
+             line-height: 50px; 
+             list-style-type: none; 
+             background:#fff; 
+             margin-top: 25px;
+             float: right;
+} 
+#nav a { 
+                display: block; 
+                width: 100px; 
+                text-align:center; 
+} 
+#nav a:link { 
+                        color:#666; 
+                        text-decoration:none; 
+} 
+#nav a:visited { 
+                        color:#fff;
+                        text-decoration:none; 
+} 
+#nav a:hover { 
+                          color:#fff;
+                          text-decoration:none;
+} 
+#nav li { 
+                float: left; 
+                width: 100px; 
+                background:#fff; 
+                position: relative;
+} 
+#nav li a:hover{ 
+                             background:#FFB81E; 
+} 
+#nav li ul { 
+                     line-height: 27px;
+                     list-style-type: none;
+                     text-align:left; 
+                     width: 100px; 
+                     position: absolute;
+                     display: none;
+                     z-index: 100;
+} 
+#nav li ul li{ 
+                        width: 100px; 
+                        background: #fafafa; 
+} 
+#nav li ul a{ 
+                        display: block; 
+                        width: 100px;
+                        text-align:center;
+} 
+#nav li ul a:link { 
+                              color:#666; 
+                              text-decoration:none; 
+} 
+#nav li ul a:visited { 
+                                   color:#666;
+                                   text-decoration:none; 
+} 
+#nav li ul a:hover { 
+                                  color:#ffffff;
+                                  text-decoration:none;
+                                  font-weight:normal; 
+} 
 
-}
-.li-other a{
-/*	background:url(/assets/nav_hover_03.png) no-repeat 0 bottom;*/
-	border-bottom: 4px solid #ffbb18;
-}
+/*.li-other a{
+	background:url(/assets/nav_hover_03.png) no-repeat 0 bottom;
+	background: #ffbb18;
+}*/
 
 .banner {
 	width: 100%; 
@@ -173,16 +233,16 @@ a:hover {
 	height: 280px;
 }
 .product-main {
-	width: 73%;
+	width: 1000px;
 	height: 110px;
 	padding-top: 80px;
 	margin: 0 auto;
 }
 .product-main ul li {
-	width: 22%;
-	height: 110px;
-	margin-right: 15%;
-	float: left;
+	width: 296px;
+            height: 350px;
+            margin-right: 55px;
+            float: left;
 }
 .product-main ul li .icon img {
 	width: 250px;
@@ -195,9 +255,13 @@ a:hover {
 }
 
 .icon {
-	width: 110px;
+	width: 250px;
+	height: 260px;
+	border: 1px solid #fff;
 	float: left;
 	position: absolute;
+	padding: 20px;
+	border: 3px solid #c7c7c7;
 }
 
 .contact {
@@ -206,7 +270,7 @@ a:hover {
 	float: left;
 	position: relative;
 	top: 0px;
-	background-color: #f8c900;
+	background-color: #9483ec;
 	opacity: 0.8;
 	padding: 30px;
 	display: none;
@@ -228,10 +292,20 @@ a:hover {
               color: #ffffff;
               text-align: center;
  }
-
+.main_desc{
+	font-size: 16px;
+	text-align: left;
+	width: 250px;
+	height: 90px;
+	overflow: hidden;
+	margin-top: 20px;
+}
+.main_desc p{
+	text-indent: 0px;
+}
  .product .last{
- 	float: right;
- 	margin-right: 4%; 
+ 	float: left;
+ 	margin-right: 0px; 
  }
 
 /*#方案与产品*/
@@ -250,8 +324,17 @@ a:hover {
 .product-main_2 {
 	width:1100px;
 	height: auto;
-	padding-top: 100px;
 	margin:0 auto;
+	padding: 40px 0px;
+}
+.product-main_2  h4{
+	width: 100%;
+	text-align: center;
+	font-size: 24px;
+	color:#ab26db;
+	font-weight: 500;
+	height: 50px;
+	line-height: 50px;
 }
 .product-main_2 ul li {
 	width: 275px;
@@ -264,6 +347,13 @@ a:hover {
 	width: 280px;
 	height: 100px;
 	overflow: hidden;	
+}
+.product_desc{
+	width: 1040px;
+	font-size: 15px;
+	padding: 10px 30px;
+	line-height: 25px;
+	margin: 0 auto;
 }
  .contact_2 {
 	width: 240px;
@@ -500,13 +590,21 @@ a:hover {
 /*关于我们代码开始*/
 .abouts{
 	width:100%; 
-	height:826px; 
+	height:780px; 
 	position:relative;
 	clear: both;
 }
+.about_bg{
+	width: 730px;
+	height: 370px;
+	background: #ffffff;
+	opacity: 0.5;
+	position: absolute;
+	z-index: 1px;
+}
 .abouts .list {
 	width:100%; 
-	height:826px; 
+	height:780px; 
 	overflow:hidden; 
 	position:relative; 
 	z-index:1;
@@ -523,7 +621,7 @@ a:hover {
 	width: 100%;
 	height: 327px;
 	text-align: center;
-	padding-top: 80px;
+	padding-top: 75px;
 	background: url(/assets/jians.png) no-repeat 50% 0;
 }
 
@@ -548,7 +646,7 @@ a:hover {
 	width: 100%;
 	height: 102px;
 	text-align: center;
-	padding-top: 90px; 
+	padding-top: 85px; 
 	background: url(/assets/wens.png) no-repeat 50% 0;
 }
 .culture_cont{
@@ -561,7 +659,7 @@ a:hover {
 	width: 100%;
 	height: 93px;
 	text-align: center;
-	padding-top: 90px; 
+	padding-top: 85px; 
 	background: url(/assets/yuans.png) no-repeat 50% 0;
 }
 .visition_cont{
@@ -573,7 +671,7 @@ a:hover {
 	width: 100%;
 	height: 180px;
 	text-align: center;
-	padding-top: 209px; 
+	padding-top: 205px; 
 	background: url(/assets/zongs.png) no-repeat 50% 0;	
 }
 
@@ -587,30 +685,37 @@ a:hover {
 	overflow:hidden; 
 	text-overflow: ellipsis;
 }
-
+.hide{
+	display: hidden;
+}
 .distribut_cont{
 	width: 100%;
 	height: 500px;
-	padding-top: 80px;
+/*	padding-top: 80px;*/
 	background: url(/assets/maps.png) no-repeat 50% 0;		
 }
 
  .distribut_cont .countrys{
 	width: 1170px;
 	height: 440px;
-	padding-top: 60px;
+	padding-top: 30px;
 	margin: 0 auto;
 	overflow: hidden;
+	position: relative;
 }
  .distribut_cont .countrys img{
- 	width: 280px;
- 	height: 278px;
+ 	width: 450px;
+ 	height: 300px;
+ 	border: 0;
+ 	margin-left: 30px;
  }
-
+a.contrct{
+	color: #ffbb18;
+}
 .distribut_cont ul li{
  	float: left;
  	height: 400px;
-	margin-right: 5px;
+	/*margin-right: 5px;*/
 	text-align: center;
 }
  .zmd{
@@ -636,15 +741,59 @@ a:hover {
 /*联系我们*/
 .contacts {
 	width: 100%; 
-	height: 720px; 
 	clear: both;
 	text-align: center;
-	padding-top:40px; 
 	color: #000000;
 }
 .contacts span{
 	font-size: 20px;
 	padding:10px; 
+}
+ .countrys .menue{
+ 	margin-top: 30px;
+ 	float: left;
+ }
+
+ .countrys  .menue li{
+	width: 80px;
+	height: 30px;
+	line-height: 30px;
+	background: #c7c7c7;
+	float: none;
+	margin-top: 40px;
+	border:1px solid #e5e5e5;
+	border-right: 0px;
+	font-size: 14px;
+	cursor:pointer;
+}
+.country_desc{
+	max-height:600px;
+	margin-top:60px; 
+}
+#tab1{
+	width: 830px;
+	margin: 0 auto;
+}
+.menue_pic{
+	float: left;
+	height: 283px;
+	width:283px;
+	margin-left: 30px;
+	margin-top: 50px;
+}
+.menue_cont{
+	width: 730px;
+	height: 330px;
+	float:left;
+	position: relative;
+	overflow: hidden;
+}
+.menue_cont li{
+	position: relative;
+	z-index: 999;
+	height: 310px;
+	padding: 10px;
+	width: 710px;
 }
 .contact_cont {
 	margin: 0 auto;
@@ -849,3 +998,126 @@ p{ text-indent:2em;}
 	float: right;
 }
 
+/*成功案例开始*/
+.con{
+        width: 1000px;
+        overflow: hidden;
+        padding: 0px 20px 0px 40px;
+        float: left;
+}
+.con h2 {
+    width: 1000px;
+    border-bottom: #e5e5e5 1px solid;
+    cursor: default;
+    font-size: 25px;
+    font-weight: normal;
+    color: #e60;
+    text-decoration: none;
+    float: left;
+}
+.con h2 em {
+    font-size: 14px;
+    font-family: arial;
+    font-style: normal;
+    color: #aaa;
+    margin-left: 8px;
+}
+.con .content {
+    width: 1000px;
+    float: left;
+    padding: 20px 0px;
+    overflow: hidden;
+    font-size: 14px;
+    line-height: 36px;
+    letter-spacing: 0.6px;
+    color: #555;
+}
+
+img{border: 0;}
+.map_img{
+    float: left;
+    height: 300px;
+}
+.map_content{
+    float: left;
+    line-height: 40px;
+    font-size: 15px;
+    color:#000;
+}
+.countrys .menue li.bg_orange{
+    background: #ff6600;
+    color:#fff;
+}
+
+/*solutions*/
+.slution{
+ width:1100px;
+ margin:0 auto;
+}
+.slution h2 {
+    width: 1100px;
+    border-bottom: #e5e5e5 1px solid;
+    cursor: default;
+    font-size: 25px;
+    font-weight: normal;
+    color: #e60;
+    text-decoration: none;
+    float: left;
+    padding: 15px 0px;
+    height: 40px;
+    line-height: 40px;
+}
+
+.slution .slute_cont {
+    width: 1100px;
+    float: left;
+    padding: 0px 0px 20px 0px;
+    overflow: hidden;
+    font-size: 14px;
+    line-height: 36px;
+    letter-spacing: 0.6px;
+    color: #555;
+}
+.slute_cont h3{
+    line-height:40px;
+    width: 1100px;
+    font-size: 17px;
+    font-weight: bold;
+    color: #e60;
+}
+.slute_cont h3 a {
+    width: 650px;
+    height: 40px;
+    float: left;
+    margin: 10px 0px;
+    text-decoration: none;
+    padding-left: 50px;
+    background: url(/assets/solute.jpg) no-repeat 0 0;
+    font-size: 17px;
+    font-weight: bold;
+    color:#9e69b1;
+}
+.slute_cont li .slcon {
+    width: 1100px;
+    overflow: hidden;
+    float: left;
+    max-height:90px;
+    line-height: 30px;
+
+}
+.slute_cont ul li{
+/*    padding-bottom:30px;
+    border-bottom: 1px dashed #c7c7c7;*/
+    margin-bottom: 15px;
+}
+/*scrollTop*/
+.top_back{
+	position: fixed;
+	bottom: 20px;
+	right: 10px;
+	z-index: 1000000;
+}
+.top_back img{
+	width: 70px;
+	height:70px;
+}

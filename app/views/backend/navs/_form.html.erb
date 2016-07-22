@@ -1,0 +1,36 @@
+<%= form_for [:backend,@nav], html: {:class => "valid_engine establish", multipart: true} do |f| %>
+  <div class="public_form">
+    <label class="label"><span>*</span>导航名称:</label>
+    <%= f.text_field :name, class: 'validate[required] public_input' %>
+  </div>
+  
+    <div class="public_form">
+    <label class="label">类别：</label>
+    <%= f.select :kind, [['请选择....','1'],['解决方案','2'],['成功案例','3'],['资讯动态','4'],['关于我们','5'],['广纳贤才','6']] , class: 'validate[required] public_input'%> 
+
+ <div class="public_form">
+    <label class="label"><span>*</span>导航链接:</label>
+    <%= f.text_field :link, class: 'validate[required] public_input' %>
+  </div>
+
+  <div class="public_form">
+    <label class="label"><span></span>导航详情</label>
+    <%= f.ueditor_text :detail, :width => "80%", :class => "ml150" %>
+  </div>
+
+  <div class="public_form">
+    <label class="label">附件上传</label>
+    <% if not @nav.fileuploads.nil? %>
+      <% @nav.fileuploads.each do |file|%>
+      <span><%= file.filename.path.split("/").last %></span>
+      <%= link_to 'x', file_delete_backend_navs_path(file_id: file.id), class: "file" %>
+      <% end %>
+    <% end %>
+    <br/>  
+    <%= render '/backend/shared/upload_file', :f => f %>
+  </div>
+  <div class='clear'></div> 
+  <div>
+    <%= render '/backend/shared/form_buttons', :f => f  %>
+  </div>
+<% end %>
