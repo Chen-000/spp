@@ -24,67 +24,56 @@
   <div class="search">
      	<%= render "search" %>
   </div>
+<br>
 
-  <div class="infos goods_1" id="con_one_1">
-    <div class="picture " >
-      <ul>
+<div class="pro_item wh pt20 goods_1" id="con_one_1">
+  <div class="info_all">
+
        <% @infos.where(kind:2).each do |p|%>
          <% p.avatars.each do |ta|%>
-           <li>
-           <% if ta.photo.blank? %>
-              <%= image_tag "man.gif" %>
-           <% else %>
-              <%= image_tag "#{ ta.photo}" %> 
-           <% end %>
-          </li>
+          <div class="info_one">
+            <h1>
+               <%= image_tag "#{ ta.photo}" ,id: p.id%> 
+               <div  class="red"><%= link_to "立即打开", infos_extras_home_index_path(id: p.id) %></div>
+            </h1>
+            <div   class="infoo">
+            <div class="info_one_t">
+               <strong><%= link_to "#{p.title}", infos_extras_home_index_path(id: p.id) %></strong>
+            </div>
+            <div class="info_one_c">
+             <%= p.desc.html_safe %>
+            </div>
+            </div>
+          </div>   
         <% end -%>
       <% end -%>
-     </ul>
-   </div>
-   <div class="content">
-     <ul>
-       <% @infos.where(kind:2).each do |p|%>
-         <li>
-           <h2 class="title">
-             <strong><%= link_to "#{p.title}", infos_extras_home_index_path(id: p.id) %></strong>
-          </h2>
-           </br>
-           <p class="desc"><%= p.desc.html_safe %></p>
-         </li>
-       <% end -%>
-    </ul>
-   </div>
+
+  </div>
 </div>
 
-  <div class="infos goods_2" id="con_one_2" style="display: none">
-    <div class="picture " >
-      <ul>
+<div class="pro_item wh pt20 goods_2" id="con_one_2" style="display: none">
+  <div class="info_all">
+
        <% @infos.where(kind:3).each do |p|%>
          <% p.avatars.each do |ta|%>
-           <li>
-           <% if ta.photo.blank? %>
-              <%= image_tag "man.gif" %>
-           <% else %>
-              <%= image_tag "#{ ta.photo}" %> 
-           <% end %>
-          </li>
+          <div class="info_one">
+            <h1>
+               <%= image_tag "#{ ta.photo}" ,id: p.id%> 
+               <div  class="red"><%= link_to "立即打开", infos_extras_home_index_path(id: p.id) %></div>
+            </h1>
+            <div   class="infoo">
+            <div class="info_one_t">
+               <strong><%= link_to "#{p.title}", infos_extras_home_index_path(id: p.id) %></strong>
+            </div>
+            <div class="info_one_c">
+             <%= p.desc.html_safe %>
+            </div>
+            </div>
+          </div>   
         <% end -%>
       <% end -%>
-     </ul>
-   </div>
-   <div class="content">
-     <ul>
-       <% @infos.where(kind:3).each do |p|%>
-         <li>
-           <h2 class="title">
-             <strong><%= link_to "#{p.title}", infos_extras_home_index_path(id: p.id) %></strong>
-          </h2>
-           </br>
-           <p class="desc"><%= p.desc.html_safe %></p>
-         </li>
-       <% end -%>
-    </ul>
-   </div>
+
+  </div>
 </div>
   
       <%= paginate @infos%>

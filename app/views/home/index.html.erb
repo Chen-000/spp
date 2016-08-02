@@ -13,13 +13,150 @@
   <ul class="btn"></ul>
 </div>
 
-<div class="product">
+<div class="home_about">
+<!-- 了解更多 -->
+
+  <div class="home_about_c">
+     <div class="home_about_desc">
+        <div id="home_about_con">
+        <%= @content.content.html_safe%>
+        </div> 
+        <div class="home_about_title ">
+          <a href="/home/abouts#gsjj">了解更多</a>
+        </div>
+     </div>
+   </div>
+
+
+
+<!-- 公司产品 -->
+<div class="home_pro">
+<h2><span>公司产品<sub class="ml10">COMPANY <span class="orange">PRODUCT</span></sub></span></h2>
+  <div class="pro_item wh pt20">
+
+    <div class="item_cont" id ="tytyty"> 
+      <div class="item_tite orange dzhjy">
+         <span>电子交易化</span>
+         <span class="small clear">Electronic trading</span>
+      </div>
+      <div class="item_desc mt20">
+          <% @dzjyh.each do |w|%>
+             <span><%=link_to "#{w.name}", prod_extras_home_index_path(id: w.id) %></span>
+           <% end %>
+      </div>
+      <a id="dian">展开</a>
+      <a id="dian_b">收起</a>
+      <script type="text/javascript">    
+      $(document).ready(function () {      
+             $("#dian_b").css("display","none");
+             $("#tytyty").click(function(e){
+                var aa=$(e.target).attr("id");
+                  if(aa=="dian"){
+                           $(".mt20").css("height","220px");
+                                $(".item_cont").css("height","304px");
+                                 $("#dian_b").css("display","block");
+                                 $("#dian").css("display","none" );
+                  }else if(aa=="dian_b"){
+                     $(".mt20").css("height","120px");
+                                $(".item_cont").css("height","204px");
+                                 $("#dian_b").css("display","none");
+                                 $("#dian").css("display","block");
+                  }else{}
+             });
+         });
+                
+      </script>
+   </div>
+
+     <div class="item_cont ml60"> 
+       <div class="item_tite orange wssc">
+         <span>网上商城</span>
+         <span class="small clear">Electronic trading</span>
+       </div>
+       <div class="item_desc mt20">
+          <% @wssc.each do |w|%>
+            <span><%= link_to "#{w.name}", prod_extras_home_index_path(id: w.id)  %></span>
+          <% end %>
+       </div>
+    </div>
+
+     <div class="item_cont ml60 "> 
+       <div class="item_tite orange qtyy">
+          <span>其他应用</span>
+          <span class="small clear">Electronic trading</span>
+       </div>
+       <div class="item_desc mt20">
+          <% @qtyy.each do |w|%>
+            <span><%= link_to "#{w.name}", prod_extras_home_index_path(id: w.id) %></span>
+          <% end %>
+       </div>
+    </div>
+
+
+  </div>
+</div>
+
+</div>
+
+
+<!-- 经典案例 CLASSIC CASE -->
+<div class="home_pro clear">
+    <div class="bg_1">
+    <h2><span>经典案例<sub class="ml10">CLASSIC <span class="orange">CASE</span></sub></span></h2>
+    <div class="bg_1_p"></div></div>
+</div>
+<div class="bg_2">
+  <div class="bg_2_con">
+  中央级：中央国家机关政府采购中心<br>
+  全军级：军委后勤部军队物质采购网<br>
+  省级：广东省政府采购网上商城（19地市）<br>
+  地市县：广州、无锡、新沂、宜春、合肥蜀山区<br>
+  大型央企：中储粮、中国广核、中国大唐集团、中丝集团、中国铝业、中国通号<br>
+  500强外企：施耐德网上商城<br>
+  </div>
+</div>
+
+
+
+<!-- 新闻资讯NEWS INFORMATION -->
+<div class="home_pro clear">
+<h2><span>新闻资讯<sub class="ml10">NEWS <span class="orange">INFORMATION</span></sub></span></h2>
+</div>
+
+<div class="pro_item wh pt20">
+  <div class="info_all">
+
+       <% @infos.each do |p|%>
+         <% p.avatars.each do |ta|%>
+          <div class="info_one">
+            <h1>
+               <%= image_tag "#{ ta.photo}" ,id: p.id%> 
+               <div  class="red"><%= link_to "立即打开", infos_extras_home_index_path(id: p.id) %></div>
+            </h1>
+            <div   class="infoo">
+            <div class="info_one_t">
+               <strong><%= link_to "#{p.title}", infos_extras_home_index_path(id: p.id) %></strong>
+            </div>
+            <div class="info_one_c">
+             <%= p.desc.html_safe %>
+            </div>
+            </div>
+          </div>   
+        <% end -%>
+      <% end -%>
+
+  </div>
+</div>
+
+
+
+<!-- <div class="product">
   <div class="product-main">
     <ul>
       <a href="/home/products">
       <li>
         <div class="icon">
-          <%= image_tag "man.gif" %>
+          <%#= image_tag "man.gif" %>
           <div class="contact">
             <div class="shape"><strong>解决方案</strong></div>
          </div>
@@ -33,7 +170,7 @@
       <a href="/home/informations">
       <li>
         <div class="icon">
-          <%= image_tag "computer.gif" %>
+          <%#= image_tag "computer.gif" %>
           <div class="contact">
             <div class="shape"><strong>资讯动态</strong></div>
           </div>
@@ -45,7 +182,7 @@
       <a href="/home/abouts">
       <li class="last">
         <div class="icon">
-          <%= image_tag "hand.gif" %>
+          <%#= image_tag "hand.gif" %>
           <div class="contact">
             <div class="shape"><strong>广纳贤才</strong></div>
           </div>
@@ -55,4 +192,4 @@
       </a>
     </ul>
   </div>
-</div>
+</div> -->
