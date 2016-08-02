@@ -4,6 +4,11 @@
     <%= f.text_field :title, class: 'validate[required]'  %>
   </div> 
   
+  <div class="public_form">
+    <label class="label">类别：</label>
+    <%= f.select :kind, [['请选择....','1'],['行业资讯','2'],['公司动态','3']] , class: 'validate[required] public_input'%> 
+    </div>
+
   <div  class="public_form">
     <label class="label">资讯内容：</label>
     <%= f.ueditor_text :desc, :width => "80%", :class => "ml150"  %>

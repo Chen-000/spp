@@ -9,21 +9,26 @@
   </ul>
 </div>
 <div class="product_3">
+
   <div class="product-main_3">
-    <a name="hyzx"><div class="hyzx">行业资讯</div></a>
-    <ul class="gsdt">
-      <li>
-        <a name="gsdt"><div>公司动态</div></a>
-      </li>
-    </ul>
+    <div id="tab1">
+     <ul class="menue">
+       <li id="one1" onclick="setTab(1,'one',1)" class="bg_yellow hyzx">
+            <a name="hyzx">行业资讯</a>
+        </li>
+        <li id="one2" onclick="setTab(1,'one',2)" class="hyzx">
+          <a name="gsdt">公司动态</a>
+        </li>
+     </ul>
+    </div>
   <div class="search">
      	<%= render "search" %>
   </div>
 
-  <div class="infos">
-    <div class="picture">
+  <div class="infos goods_1" id="con_one_1">
+    <div class="picture " >
       <ul>
-       <% @infos.each do |p|%>
+       <% @infos.where(kind:2).each do |p|%>
          <% p.avatars.each do |ta|%>
            <li>
            <% if ta.photo.blank? %>
@@ -36,21 +41,87 @@
       <% end -%>
      </ul>
    </div>
-
    <div class="content">
      <ul>
-       <% @infos.each do |p|%>
+       <% @infos.where(kind:2).each do |p|%>
          <li>
-           <h2 class="title"><strong><%= link_to "#{p.title}", infos_extras_home_index_path(id: p.id) %></strong></h2>
+           <h2 class="title">
+             <strong><%= link_to "#{p.title}", infos_extras_home_index_path(id: p.id) %></strong>
+          </h2>
            </br>
            <p class="desc"><%= p.desc.html_safe %></p>
          </li>
        <% end -%>
     </ul>
    </div>
+</div>
 
-  </div>
+  <div class="infos goods_2" id="con_one_2" style="display: none">
+    <div class="picture " >
+      <ul>
+       <% @infos.where(kind:3).each do |p|%>
+         <% p.avatars.each do |ta|%>
+           <li>
+           <% if ta.photo.blank? %>
+              <%= image_tag "man.gif" %>
+           <% else %>
+              <%= image_tag "#{ ta.photo}" %> 
+           <% end %>
+          </li>
+        <% end -%>
+      <% end -%>
+     </ul>
+   </div>
+   <div class="content">
+     <ul>
+       <% @infos.where(kind:3).each do |p|%>
+         <li>
+           <h2 class="title">
+             <strong><%= link_to "#{p.title}", infos_extras_home_index_path(id: p.id) %></strong>
+          </h2>
+           </br>
+           <p class="desc"><%= p.desc.html_safe %></p>
+         </li>
+       <% end -%>
+    </ul>
+   </div>
+</div>
+  
       <%= paginate @infos%>
   </div>
- 
+
 </div>
+
+<script>
+function setTab(tab_id,name,cursel){
+  var links = document.getElementById("tab"+tab_id).getElementsByTagName('li');
+  links_len=links.length;
+  for(var i=1; i<=links_len; i++){
+    var menu = document.getElementById(name+i);
+    var menudiv = document.getElementById("con_"+name+"_"+i);
+    if(i==cursel){
+      menu.className="bg_yellow hyzx";
+      menudiv.style.display="block";
+    }else{
+      menu.className="hyzx";
+      menudiv.style.display="none";
+    }
+  }
+}
+
+$(document).ready(function(){
+  var catalog = "<%= params[:catalog]%>"
+  if (catalog == 'hyzx'){
+    $("#con_one_1").show()
+    $("#one_1").addClass("bg_yellow")
+    $("#con_one_2").hide()
+    $("#one_2").removeClass("bg_yellow")
+  }
+  if (catalog == 'gsdt'){
+    $("#con_one_2").show()
+    $("#one2").addClass("bg_yellow")
+    $("#con_one_1").hide()
+    $("#one1").removeClass("bg_yellow")
+  }
+})
+</script>
