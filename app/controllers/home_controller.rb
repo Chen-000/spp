@@ -3,6 +3,20 @@ class HomeController < ApplicationController
 layout "home"
   def index
     @pictures = Picture.where(kind: 1)
+    @content = About.find(1)
+    @info = Info.where(kind: 0)
+    @picture = Picture.where(kind: 4)
+    #公司产品
+    @wssc = Product.where(kind: 2)
+    @dzjyh= Product.where(kind: 3)
+    @qtyy = Product.where(kind: 4)
+    #新闻资讯
+    @search = Info.ransack(params[:q])
+    @infos = @search.result.order("id desc").page(params[:page]).per(20)
+    #经典案例
+    name = Nav.where(kind: 3).first.name
+    nav = Nav.where(name: name).last
+    @case_content = nav.detail
   end
 
   def products
@@ -27,7 +41,7 @@ layout "home"
   def cases
     name = Nav.where(kind: 3).first.name
     nav = Nav.where(name: name).last
-    @content = nav.detail
+    @case_content = nav.detail
     #@nav = Nav.where("kind = ? and id = ?",3,params[:id])
   end
 
