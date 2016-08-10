@@ -1,3 +1,11 @@
+   <div class="employ_p">
+     <% @picture.each_with_index do |picture, index|%>
+          <% picture.avatars.each do |ta|%>
+            <div class="map_img"><%= image_tag "#{ta.photo}"  %></div>
+        <% end %> 
+      <% end %>
+    </div>
+
 <div class="product_2">
   <div class="success_case">
       <%= @case_content.html_safe %>

@@ -11,29 +11,26 @@ class Backend::NavsController < Backend::BaseController
   def create
     @nav = Nav.new(nav_params)
     if @nav.save
-       if params[:pics]
-        params[:pics].values.each do |f|
-          @nav.fileuploads.create('filename' => f)
-        end
-      end
-      redirect_to backend_navs_path(:back => request.fullpath)
+      @nav.avatars.create(:photo => params[:photo])
+      redirect_to backend_navs_path
     else
-      render 'new'	
-    end
+      render 'new'
+    end 
   end
 
   def edit
-  	
+  	@nav = Nav.find(params[:id])
   end
 
   def update
-     @nav.update_attributes(nav_params)
-      if params[:pics]
-      params[:pics].values.each do |f|
-        @nav.fileuploads.create('filename' => f)
-      end
-    end
-    redirect_to backend_navs_path(:back => request.fullpath) 
+     @nav = Nav.find(params[:id])  
+      @nav.update_attributes(nav_params)
+     if params[:photo]
+         @nav.avatars.each do |ta|
+          ta.update(:photo => params[:photo])
+         end
+     end  
+    redirect_to backend_navs_path 
   end
 
   def destroy

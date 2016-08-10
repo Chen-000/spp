@@ -1,5 +1,5 @@
-<div class="banner">
-  <ul class="list">
+<div class="banner banner_zxtdt">
+  <ul class="list list_zxtdt">
     <% @picture.each do|p|%>
      <% p.avatars.each do |ta|%>
        <li style="display: list-item;background:url(<%= ta.photo.url %>) no-repeat 50% 0;" class="bg1" >
@@ -12,16 +12,7 @@
 <div class="ex">
 <div class="desc">
 
-<div class="cont">
-  <div class="action">
-    <% if @prev_page %>
-    <span class="spanl">上一篇：<%= link_to @prev.title, infos_extras_home_index_path(id: @prev.id)%></span>
-    <% end -%>
-    <% if @next_page %>
-    <span class="spanr">下一篇：<%= link_to @next.title, infos_extras_home_index_path(id: @next.id)%></span>
-    <% end -%>
-  </div>
-</div>
+
 <!--      <div class="hyzx">行业资讯</div>
     <ul class="gsdt">
       <li>
@@ -34,16 +25,31 @@
   <div class="extra">
     <h1>
       <div class="title">
-      <%=@contents.title%>
-    </div>
+        <%=@contents.title%>
+      </div>
     </h1>
   </div>  
+  <div class="source_link">
+    更新时间 : <%= @contents.updated_at.strftime("%Y-%m-%d %H:%M:%S")%>&nbsp;&nbsp;
+    <a href="<%=@contents.source_link%>">源链接 </a>
+  </div>
 <div class="cont">
   <div class="detail">
-   <span><%= @contents.desc.html_safe%></span>
+    <span><%= @contents.desc.html_safe%></span>
   </div>
+</div>
 
- </div>
+<div class="cont">
+  <div class="action">
+    <% if @prev_page %>
+    <span class="spanl">上一篇：<%= link_to @prev.title, infos_extras_home_index_path(id: @prev.id)%></span>
+    <% end -%>
+    <% if @next_page %>
+    <span class="spanr">下一篇：<%= link_to @next.title, infos_extras_home_index_path(id: @next.id)%></span>
+    <% end -%>
+  </div>
+</div>
+
  </div>
 </div>
 

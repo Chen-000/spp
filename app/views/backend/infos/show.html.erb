@@ -19,6 +19,11 @@
   </div>
 
   <div class="public_form">
+    <label class="label">源链接 :</label>
+    <span class="validate-name"><%= @info.source_link %></span>
+  </div>
+
+  <div class="public_form">
       <label class="label">图片：</label>
       <span class="validate-name">
         <% @info.avatars.each do |ta|%>

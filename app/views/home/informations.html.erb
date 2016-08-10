@@ -1,5 +1,5 @@
-<div class="banner">
-  <ul class="list">
+<div class="banner banner_zxtdt">
+  <ul class="list list_zxtdt">
     <% @picture.each do|p|%>
      <% p.avatars.each do |ta|%>
        <li style="display: list-item;background:url(<%= ta.photo.url %>) no-repeat 50% 0;" class="bg1" >
@@ -11,6 +11,7 @@
 <div class="product_3">
 
   <div class="product-main_3">
+  <div>
     <div id="tab1">
      <ul class="menue">
        <li id="one1" onclick="setTab(1,'one',1)" class="bg_yellow hyzx">
@@ -24,20 +25,20 @@
   <div class="search">
      	<%= render "search" %>
   </div>
-<br>
+</div>
 
-<div class="pro_item wh pt20 goods_1" id="con_one_1">
+<div class="pro_item wh pt20 goods_1 clear" id="con_one_1">
   <div class="info_all">
 
        <% @infos.where(kind:2).each do |p|%>
          <% p.avatars.each do |ta|%>
-          <div class="info_one">
+          <div class="info_one jianju">
             <h1>
                <%= image_tag "#{ ta.photo}" ,id: p.id%> 
                <div  class="red"><%= link_to "立即打开", infos_extras_home_index_path(id: p.id) %></div>
             </h1>
             <div   class="infoo">
-            <div class="info_one_t">
+            <div class="info_one_t ">
                <strong><%= link_to "#{p.title}", infos_extras_home_index_path(id: p.id) %></strong>
             </div>
             <div class="info_one_c">
@@ -56,7 +57,7 @@
 
        <% @infos.where(kind:3).each do |p|%>
          <% p.avatars.each do |ta|%>
-          <div class="info_one">
+          <div class="info_one jianju">
             <h1>
                <%= image_tag "#{ ta.photo}" ,id: p.id%> 
                <div  class="red"><%= link_to "立即打开", infos_extras_home_index_path(id: p.id) %></div>

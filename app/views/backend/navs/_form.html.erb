@@ -20,18 +20,13 @@
   </div>
 
   <div class="public_form">
-    <label class="label">附件上传</label>
-    <% if not @nav.fileuploads.nil? %>
-      <% @nav.fileuploads.each do |file|%>
-      <span><%= file.filename.path.split("/").last %></span>
-      <%= link_to 'x', file_delete_backend_navs_path(file_id: file.id), class: "file" %>
+    <label class="label">图片上传</label>
+    <%= file_field_tag :photo, class: "face" %>
+    <% if not @nav.avatars.nil? %>
+      <% @nav.avatars.each do |ta|%>
+        <a class="pic" href="<%= ta.photo.url %>" ><%= image_tag(ta.photo.url, size: "100x80", title: '点击放大') %></a>
       <% end %>
     <% end %>
-    <br/>  
-    <%= render '/backend/shared/upload_file', :f => f %>
   </div>
-  <div class='clear'></div> 
-  <div>
     <%= render '/backend/shared/form_buttons', :f => f  %>
-  </div>
 <% end %>

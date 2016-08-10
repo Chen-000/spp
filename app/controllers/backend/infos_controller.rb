@@ -40,7 +40,7 @@ class Backend::InfosController <Backend::BaseController
 
   private
     def info_params
-      params.require(:info).permit(:title, :desc, :kind )  
+      params.require(:info).permit(:title, :desc, :kind, :source_link )  
     end
 
     def find_info

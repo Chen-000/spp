@@ -44,7 +44,7 @@
              <span><%=link_to "#{w.name}", prod_extras_home_index_path(id: w.id) %></span>
            <% end %>
       </div>
-      <a id="dian">展开</a>
+      <a id="dian">...</a>
       <a id="dian_b">收起</a>
       <script type="text/javascript">    
       $(document).ready(function () {      
@@ -52,12 +52,12 @@
              $("#tytyty").click(function(e){
                 var aa=$(e.target).attr("id");
                   if(aa=="dian"){
-                           $(".mt20").css("height","220px");
-                                $(".item_cont").css("height","304px");
+                           $(".mt20").css("height","160px");
+                                $(".item_cont").css("height","270px");
                                  $("#dian_b").css("display","block");
                                  $("#dian").css("display","none" );
                   }else if(aa=="dian_b"){
-                     $(".mt20").css("height","120px");
+                     $(".mt20").css("height","100px");
                                 $(".item_cont").css("height","204px");
                                  $("#dian_b").css("display","none");
                                  $("#dian").css("display","block");

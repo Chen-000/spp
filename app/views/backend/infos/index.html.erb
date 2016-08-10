@@ -14,6 +14,7 @@
           <td>序号</td>
           <td>类别</td>
           <td>名称</td>
+          <td>源链接</td>
           <td>操作</td>
         </tr>
         <% @infos.each_with_index do |info,index| %>
@@ -21,6 +22,7 @@
             <td><%= index_no(index, 20)%></td>
             <td><%= Info::KIND[info.kind]%></td>
             <td><%= info.title%></td>
+            <td><%= info.source_link%></td>
             <td class="textc operation">
               <%=link_to "查看" , backend_info_path(info, :back => request.fullpath) %>
               <%= link_to"修改", edit_backend_info_path(info, :back => request.fullpath) %>

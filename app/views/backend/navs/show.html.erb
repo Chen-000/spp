@@ -17,14 +17,6 @@
       <div  class='mb20 document_content'><p><%= @nav.detail.html_safe %></p></div>
     </div>
 
-    <h3 class='mt20'>附件下载</h3>
-    <div class="textc operation mt20">
-      <% @nav.fileuploads.each do |file|%>
-        <% if not file.filename.blank? %>
-          <%= file.filename.path.split("/").last %><%= link_to '下载', file_download_backend_navs_path(file_id: file.id) %><br/>
-        <% end %>
-      <% end %>
-    </div>
   
 
   <%= link_to '修改', edit_backend_nav_path(@nav, :back => request.fullpath)%>

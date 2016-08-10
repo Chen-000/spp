@@ -42,6 +42,7 @@ layout "home"
     name = Nav.where(kind: 3).first.name
     nav = Nav.where(name: name).last
     @case_content = nav.detail
+    @picture = Picture.where(kind: 10)
     #@nav = Nav.where("kind = ? and id = ?",3,params[:id])
   end
 
@@ -49,6 +50,7 @@ layout "home"
     name = Nav.where(kind: 6).first.name
     nav = Nav.where(name: name).last
     @content = nav.detail
+    @picture = Picture.where(kind: 9)
   end
 
   # def ajax_query
