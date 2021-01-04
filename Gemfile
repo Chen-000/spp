@@ -1,5 +1,5 @@
 # encoding: utf-8
-source 'https://ruby.taobao.org'
+source 'https://gems.ruby-china.com/'
 
 gem 'rails', '4.1.7'
 # gems\activerecord-4.1.7\lib\active_record\connection_adapters\mysql2_adapter.rb -> '~> 0.3.11'
@@ -26,7 +26,7 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin]
 #  Ruby client for accessing memcached servers.
 gem 'dalli', '2.7.2'
 # 电商接口
-gem 'rest_client', '1.8.2'
+gem 'rest-client'
 # 只使用load_resource
 gem 'cancancan', '1.9.2'
 # 建立api

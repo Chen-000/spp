@@ -19,7 +19,7 @@
   <div class="home_about_c">
      <div class="home_about_desc">
         <div id="home_about_con">
-        <%= @content.content.html_safe%>
+        <%= @content.content.html_safe rescue nil %>
         </div> 
         <div class="home_about_title ">
           <a href="/home/abouts#gsjj">了解更多</a>
