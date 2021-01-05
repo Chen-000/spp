@@ -1,21 +1,3 @@
-<script>
-function setTab(tab_id,name,cursel){
-  var links = document.getElementById("tab"+tab_id).getElementsByTagName('li');
-  links_len=links.length;
-  for(var i=1; i<=links_len; i++){
-    var menu = document.getElementById(name+i);
-    var menudiv = document.getElementById("con_"+name+"_"+i);
-    if(i==cursel){
-      menu.className="bg_orange";
-      menudiv.style.display="block";
-    }else{
-      menu.className="";
-      menudiv.style.display="none";
-    }
-  }
-}
-</script>
-
 <div class="abouts">
   <ul class="list">
     <% @pictures.each do|p|%>
@@ -94,10 +76,23 @@ function setTab(tab_id,name,cursel){
       </div>  
      </div>
    </div>
-</div>
-
   </div>
 </div>
 
-</div> 
-
+<script>
+  function setTab(tab_id,name,cursel){
+    var links = document.getElementById("tab"+tab_id).getElementsByTagName('li');
+    links_len=links.length;
+    for(var i=1; i<=links_len; i++){
+      var menu = document.getElementById(name+i);
+      var menudiv = document.getElementById("con_"+name+"_"+i);
+      if(i==cursel){
+        menu.className="bg_orange";
+        menudiv.style.display="block";
+      }else{
+        menu.className="";
+        menudiv.style.display="none";
+      }
+    }
+  }
+</script>
