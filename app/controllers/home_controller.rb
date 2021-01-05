@@ -1,6 +1,7 @@
 # -*- encoding : utf-8 -*-
 class HomeController < ApplicationController
-layout "home"
+  layout "home"
+  
   def index
     @pictures = Picture.where(kind: 1)
     @content = About.find_by_id(1)
@@ -20,11 +21,11 @@ layout "home"
   end
 
   def products
-        @wssc = Product.where(kind: 2)
-        @dzjyh= Product.where(kind: 3)
-        @qtyy = Product.where(kind: 4)
-        @pictures = Picture.where(kind: 3)
-        @nav = Nav.where(kind:2)
+    @wssc = Product.where(kind: 2)
+    @dzjyh= Product.where(kind: 3)
+    @qtyy = Product.where(kind: 4)
+    @pictures = Picture.where(kind: 3)
+    @nav = Nav.where(kind:2)
   end
 
   def informations
@@ -63,8 +64,8 @@ layout "home"
     @countrys = Picture.where(kind: 8)
     @zmd = Picture.where(kind: 7)
     @pictures = Picture.where(kind: 5)
-    @content = About.find(1)
-    @distribut = About.find(3)
+    @content = About.find_by_id(1)
+    @distribut = About.find_by_id(3)
     @contacts = Contact.all
   end
 
@@ -74,17 +75,17 @@ layout "home"
   end 
 
   def prod_extras
-     @content = Product.find(params[:id])
+     @content = Product.find_by_id(params[:id])
      @picture = Picture.where(kind: 3)
   end
 
   def infos_extras
      @search = Info.ransack(params[:q])
-     @contents = Info.find(params[:id])
+     @contents = Info.find_by_id(params[:id])
      @picture = Picture.where(kind: 4)
      @prev = Info.where("id < ?", @contents.id).last
      @next = Info.where("id > ?", @contents.id).first
      @prev_page = true  if @prev 
-     @next_page = true   if  @next
+     @next_page = true  if @next
   end
 end

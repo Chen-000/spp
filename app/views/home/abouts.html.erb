@@ -29,7 +29,7 @@ function setTab(tab_id,name,cursel){
 <div class="about_introduct">
   <a name="gsjj"><span class="about_title"><strong>公司简介 </strong></span></a>
   <div class="introduct_cont about_desc">
-    <%= @content.content.html_safe%>
+    <%= @content.content.html_safe rescue nil %>
   </div>
 </div>
 <div class="culture">

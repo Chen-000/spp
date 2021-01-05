@@ -46,26 +46,6 @@
       </div>
       <a id="dian">...</a>
       <a id="dian_b">收起</a>
-      <script type="text/javascript">    
-        $(document).ready(function () {      
-           $("#dian_b").css("display","none");
-           $("#tytyty").click(function(e){
-              var aa=$(e.target).attr("id");
-                if(aa=="dian"){
-                   $(".mt20").css("height","160px");
-                   $(".item_cont").css("height","270px");
-                   $("#dian_b").css("display","block");
-                   $("#dian").css("display","none" );
-                }else if(aa=="dian_b"){
-                   $(".mt20").css("height","100px");
-                   $(".item_cont").css("height","204px");
-                   $("#dian_b").css("display","none");
-                   $("#dian").css("display","block");
-                }else{}
-           });
-         });
-                
-      </script>
    </div>
 
      <div class="item_cont ml60"> 
@@ -107,12 +87,12 @@
 </div>
 <div class="bg_2">
   <div class="bg_2_con">
-  中央级：中央国家机关政府采购中心<br>
-  全军级：军委后勤部军队物质采购网<br>
-  省级：广东省政府采购网上商城（19地市）<br>
-  地市县：广州、无锡、新沂、宜春、合肥蜀山区<br>
-  大型央企：中储粮、中国广核、中国大唐集团、中丝集团、中国铝业、中国通号<br>
-  500强外企：施耐德网上商城<br>
+    中央级：中央国家机关政府采购中心<br>
+    全军级：军委后勤部军队物质采购网<br>
+    省级：广东省政府采购网上商城（19地市）<br>
+    地市县：广州、无锡、新沂、宜春、合肥蜀山区<br>
+    大型央企：中储粮、中国广核、中国大唐集团、中丝集团、中国铝业、中国通号<br>
+    500强外企：施耐德网上商城<br>
   </div>
 </div>
 
@@ -125,7 +105,6 @@
 
 <div class="pro_item wh pt20">
   <div class="info_all">
-
      <% @infos.each do |p|%>
        <% p.avatars.each do |ta|%>
         <div class="info_one">
@@ -147,3 +126,23 @@
 
   </div>
 </div>
+
+<script type="text/javascript">    
+  $(document).ready(function () {      
+     $("#dian_b").css("display","none");
+     $("#tytyty").click(function(e){
+        var aa=$(e.target).attr("id");
+        if(aa=="dian"){
+           $(".mt20").css("height","160px");
+           $(".item_cont").css("height","270px");
+           $("#dian_b").css("display","block");
+           $("#dian").css("display","none" );
+        }else if(aa=="dian_b"){
+           $(".mt20").css("height","100px");
+           $(".item_cont").css("height","204px");
+           $("#dian_b").css("display","none");
+           $("#dian").css("display","block");
+        }else{}
+     });
+   });
+</script>
