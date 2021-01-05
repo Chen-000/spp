@@ -40,29 +40,29 @@
          <span class="small clear">Electronic trading</span>
       </div>
       <div class="item_desc mt20">
-          <% @dzjyh.each do |w|%>
-             <span><%=link_to "#{w.name}", prod_extras_home_index_path(id: w.id) %></span>
-           <% end %>
+        <% @dzjyh.each do |w|%>
+           <span><%=link_to "#{w.name}", prod_extras_home_index_path(id: w.id) %></span>
+         <% end %>
       </div>
       <a id="dian">...</a>
       <a id="dian_b">收起</a>
       <script type="text/javascript">    
-      $(document).ready(function () {      
-             $("#dian_b").css("display","none");
-             $("#tytyty").click(function(e){
-                var aa=$(e.target).attr("id");
-                  if(aa=="dian"){
-                           $(".mt20").css("height","160px");
-                                $(".item_cont").css("height","270px");
-                                 $("#dian_b").css("display","block");
-                                 $("#dian").css("display","none" );
-                  }else if(aa=="dian_b"){
-                     $(".mt20").css("height","100px");
-                                $(".item_cont").css("height","204px");
-                                 $("#dian_b").css("display","none");
-                                 $("#dian").css("display","block");
-                  }else{}
-             });
+        $(document).ready(function () {      
+           $("#dian_b").css("display","none");
+           $("#tytyty").click(function(e){
+              var aa=$(e.target).attr("id");
+                if(aa=="dian"){
+                   $(".mt20").css("height","160px");
+                   $(".item_cont").css("height","270px");
+                   $("#dian_b").css("display","block");
+                   $("#dian").css("display","none" );
+                }else if(aa=="dian_b"){
+                   $(".mt20").css("height","100px");
+                   $(".item_cont").css("height","204px");
+                   $("#dian_b").css("display","none");
+                   $("#dian").css("display","block");
+                }else{}
+           });
          });
                 
       </script>
@@ -101,9 +101,9 @@
 
 <!-- 经典案例 CLASSIC CASE -->
 <div class="home_pro clear">
-    <div class="bg_1">
-    <h2><span>经典案例<sub class="ml10">CLASSIC <span class="orange">CASE</span></sub></span></h2>
-    <div class="bg_1_p"></div></div>
+  <div class="bg_1">
+  <h2><span>经典案例<sub class="ml10">CLASSIC <span class="orange">CASE</span></sub></span></h2>
+  <div class="bg_1_p"></div></div>
 </div>
 <div class="bg_2">
   <div class="bg_2_con">
@@ -126,70 +126,24 @@
 <div class="pro_item wh pt20">
   <div class="info_all">
 
-       <% @infos.each do |p|%>
-         <% p.avatars.each do |ta|%>
-          <div class="info_one">
-            <h1>
-               <%= image_tag "#{ ta.photo}" ,id: p.id%> 
-               <div  class="red"><%= link_to "立即打开", infos_extras_home_index_path(id: p.id) %></div>
-            </h1>
-            <div   class="infoo">
-            <div class="info_one_t">
-               <strong><%= link_to "#{p.title}", infos_extras_home_index_path(id: p.id) %></strong>
-            </div>
-            <div class="info_one_c">
-             <%= p.desc.html_safe %>
-            </div>
-            </div>
-          </div>   
-        <% end -%>
+     <% @infos.each do |p|%>
+       <% p.avatars.each do |ta|%>
+        <div class="info_one">
+          <h1>
+             <%= image_tag "#{ ta.photo}" ,id: p.id%> 
+             <div  class="red"><%= link_to "立即打开", infos_extras_home_index_path(id: p.id) %></div>
+          </h1>
+          <div   class="infoo">
+          <div class="info_one_t">
+             <strong><%= link_to "#{p.title}", infos_extras_home_index_path(id: p.id) %></strong>
+          </div>
+          <div class="info_one_c">
+           <%= p.desc.html_safe %>
+          </div>
+          </div>
+        </div>   
       <% end -%>
+    <% end -%>
 
   </div>
 </div>
-
-
-
-<!-- <div class="product">
-  <div class="product-main">
-    <ul>
-      <a href="/home/products">
-      <li>
-        <div class="icon">
-          <%#= image_tag "man.gif" %>
-          <div class="contact">
-            <div class="shape"><strong>解决方案</strong></div>
-         </div>
-         <div class="main_desc">
-         <p>数理模型建设的商品库，多电商厂商聚合，货比三家，实现“市场可选、价格可比、便捷高效、公开透明”的目标 ！</p>
-         </div>
-        </div>       
-  
-      </li>
-      </a>
-      <a href="/home/informations">
-      <li>
-        <div class="icon">
-          <%#= image_tag "computer.gif" %>
-          <div class="contact">
-            <div class="shape"><strong>资讯动态</strong></div>
-          </div>
-          <div class="main_desc"><p>“互联网”+ 战略驱动，打造互联网+公共采购第一品牌——阳光公采商城 ！</p></div>
-        </div>       
-
-      </li>
-      </a>
-      <a href="/home/abouts">
-      <li class="last">
-        <div class="icon">
-          <%#= image_tag "hand.gif" %>
-          <div class="contact">
-            <div class="shape"><strong>广纳贤才</strong></div>
-          </div>
-          <div class="main_desc"><p>汇集行业英才，齐成鸿鹄之志,进取、专注、创新、共赢 ！</p></div>
-        </div>       
-      </li>
-      </a>
-    </ul>
-  </div>
-</div> -->
