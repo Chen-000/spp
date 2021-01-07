@@ -40,17 +40,17 @@ class HomeController < ApplicationController
   end
 
   def cases
-    name = Nav.where(kind: 3).first.name
+    name = Nav.find_by(kind: 3).try(:name)
     nav = Nav.where(name: name).last
-    @case_content = nav.detail
+    @case_content = nav.try(:detail)
     @picture = Picture.where(kind: 10)
     #@nav = Nav.where("kind = ? and id = ?",3,params[:id])
   end
 
   def employ
-    name = Nav.where(kind: 6).first.name
+    name = Nav.find_by(kind: 6).try(:name)
     nav = Nav.where(name: name).last
-    @content = nav.detail
+    @content = nav.try(:detail)
     @picture = Picture.where(kind: 9)
   end
 
